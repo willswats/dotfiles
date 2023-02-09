@@ -20,12 +20,12 @@ M.setup = function()
 
 	for _, sign in ipairs(signs) do
 		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-	end
+  end
 
 	local config = {
-		virtual_text = false, -- disable virtual text
+		virtual_text = true,
 		signs = {
-			active = signs, -- show signs
+			active = signs,
 		},
 		update_in_insert = true,
 		underline = true,
@@ -72,14 +72,6 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-	if client.name == "tsserver" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
-
-	if client.name == "sumneko_lua" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
-
 	lsp_keymaps(bufnr)
 	local status_ok, illuminate = pcall(require, "illuminate")
 	if not status_ok then
