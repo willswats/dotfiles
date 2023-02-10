@@ -25,7 +25,6 @@ local plugins = {
     "nvim-tree/nvim-tree.lua",
     "akinsho/bufferline.nvim",
     "nvim-lualine/lualine.nvim",
-    -- "tamago324/lir.nvim",
     "akinsho/toggleterm.nvim",
     "ahmedkhalf/project.nvim",
     "lukas-reineke/indent-blankline.nvim",
@@ -48,8 +47,6 @@ local plugins = {
     "L3MON4D3/LuaSnip",
     "rafamadriz/friendly-snippets",
 
-    -- "folke/neodev.nvim",
-
     -- LSP
     "neovim/nvim-lspconfig",
     "williamboman/mason.nvim",
@@ -67,8 +64,8 @@ local plugins = {
     "lewis6991/gitsigns.nvim",
 
     -- dap
-    -- "mfussenegger/nvim-dap",
-    -- "rcarriga/nvim-dap-ui",
+    "mfussenegger/nvim-dap",
+    "rcarriga/nvim-dap-ui",
 }
 
 lazy.setup(plugins)
