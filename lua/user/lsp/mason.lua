@@ -49,5 +49,7 @@ for _, server in pairs(servers) do
   end
 
   lspconfig[server].setup(opts)
-  lspconfig.omnisharp_mono.setup {}
+  lspconfig.omnisharp_mono.setup {
+      root_dir = lspconfig.util.root_pattern('.git')
+  }
 end
