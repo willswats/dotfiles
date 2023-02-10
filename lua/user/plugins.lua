@@ -49,17 +49,12 @@ local plugins = {
 
     "folke/neodev.nvim",
 
-    -- dap
-    "mfussenegger/nvim-dap",
-    "rcarriga/nvim-dap-ui",
-
-
     -- LSP
     "neovim/nvim-lspconfig",
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "jose-elias-alvarez/null-ls.nvim",
-    -- "RRethy/vim-illuminate",
+    -- "RRethy/vim-illuminate", TODO: Fix this plugin error
 
     -- Telescope
     "nvim-telescope/telescope.nvim",
@@ -67,9 +62,12 @@ local plugins = {
     -- Treesitter
     "nvim-treesitter/nvim-treesitter",
 
-
     -- Git
     "lewis6991/gitsigns.nvim",
+
+    -- dap
+    "mfussenegger/nvim-dap",
+    "rcarriga/nvim-dap-ui",
 }
 
 lazy.setup(plugins)

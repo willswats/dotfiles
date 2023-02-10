@@ -1,9 +1,12 @@
 local servers = {
-    "sumneko_lua",
+    "marksman",
+    "html",
     "cssls",
     "jsonls",
-    "html",
     "tsserver",
+    "sumneko_lua",
+    "rust_analyzer",
+    "taplo",
 }
 
 local settings = {
