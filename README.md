@@ -25,6 +25,12 @@ python3 -m pip install --user pynvim
 cargo install fd-find ripgrep
 ```
 
+### Formatters & Linters
+
+```bash
+pnpm i -g prettier markdownlint-cli
+```
+
 ## Installation
 
 ```bash
