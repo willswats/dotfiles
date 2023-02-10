@@ -33,6 +33,14 @@ pnpm i -g prettier markdownlint-cli
 
 ## Installation
 
+HTTPS:
+
 ```bash
 git clone https://github.com/willswats/neovim-config.git ~/.config/nvim
+```
+
+SSH:
+
+```bash
+git clone git@github.com:willswats/neovim-config.git ~/.config/nvim
 ```
