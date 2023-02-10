@@ -33,7 +33,7 @@ local plugins = {
     "folke/which-key.nvim",
 
     -- Colorscheme
-    "folke/tokyonight.nvim",
+    "lunarvim/darkplus.nvim",
 
     -- cmp
     "hrsh7th/nvim-cmp",

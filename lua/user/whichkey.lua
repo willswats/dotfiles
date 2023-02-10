@@ -103,13 +103,8 @@ local mappings = {
     ["w"] = { "<cmd>w!<CR>", "Save" },
     ["q"] = { "<cmd>confirm q<CR>", "Quit" },
     ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
-    ["c"] = { "<cmd>BufferKill<CR>", "Close Buffer" },
-    ["f"] = {
-        function()
-          require("lvim.core.telescope.custom-finders").find_project_files { previewer = false }
-        end,
-        "Find File",
-    },
+    ["c"] = { function(bufnr) BUF_KILL("bd", bufnr, false) end, "Close Buffer" },
+    ["f"] = { "<cmd>Telescope find_files<CR>", "Find Files" },
     ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
     ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
     b = {
@@ -165,16 +160,9 @@ local mappings = {
         l = { "<cmd>Lazy log<cr>", "Log" },
         d = { "<cmd>Lazy debug<cr>", "Debug" },
     },
-    -- " Available Debug Adapters:
-    -- "   https://microsoft.github.io/debug-adapter-protocol/implementors/adapters/
-    -- " Adapter configuration and installation instructions:
-    -- "   https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
-    -- " Debug Adapter protocol:
-    -- "   https://microsoft.github.io/debug-adapter-protocol/
-    -- " Debugging
     g = {
         name = "Git",
-        g = { "<cmd>lua require 'lvim.core.terminal'.lazygit_toggle()<cr>", "Lazygit" },
+        g = { function() LAZYGIT_TOGGLE() end, "Lazygit" },
         j = { "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>", "Next Hunk" },
         k = { "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>", "Prev Hunk" },
         l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
