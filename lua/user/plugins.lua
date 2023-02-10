@@ -31,6 +31,7 @@ local plugins = {
     "lukas-reineke/indent-blankline.nvim",
     "goolord/alpha-nvim",
     "folke/which-key.nvim",
+    "mg979/vim-visual-multi",
 
     -- Colorscheme
     "lunarvim/darkplus.nvim",
