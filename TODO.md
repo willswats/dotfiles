@@ -14,3 +14,5 @@
 
 - [ ] folke/neodev.nvim
 - [ ] tamago324/lir.nvim
+- [ ] vim-illuminate
+- [ ] plugins that display lsp progress
