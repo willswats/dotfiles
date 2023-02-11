@@ -9,7 +9,8 @@ bufferline.setup {
         close_command = function(bufnr) -- can be a string | function, see "Mouse actions"
           BUF_KILL("bd", bufnr, false)
         end,
-        right_mouse_command = "vert sbuffer %d", -- can be a string | function, see "Mouse actions"        left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
+        left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
+        right_mouse_command = "vert sbuffer %d", -- can be a string | function, see "Mouse actions"
         middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
         -- NOTE: this plugin is designed with this icon in mind,
         -- and so changing this is NOT recommended, this is intended

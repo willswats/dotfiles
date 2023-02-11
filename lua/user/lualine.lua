@@ -48,7 +48,7 @@ local location = {
     padding = 0,
 }
 
--- cool function for progress
+-- Function for progress
 local progress = function()
   local current_line = vim.fn.line(".")
   local total_lines = vim.fn.line("$")

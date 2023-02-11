@@ -150,7 +150,7 @@ local mappings = {
         U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
     },
     p = {
-        name = "Plugins",
+        name = "Lazy",
         i = { "<cmd>Lazy install<cr>", "Install" },
         s = { "<cmd>Lazy sync<cr>", "Sync" },
         S = { "<cmd>Lazy clear<cr>", "Status" },
@@ -162,7 +162,7 @@ local mappings = {
     },
     g = {
         name = "Git",
-        g = { function() LAZYGIT_TOGGLE() end, "Lazygit" },
+        g = { "<cmd>term lazygit<cr>", "Lazygit" },
         j = { "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>", "Next Hunk" },
         k = { "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>", "Prev Hunk" },
         l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },

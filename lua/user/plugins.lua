@@ -25,7 +25,6 @@ local plugins = {
     "nvim-tree/nvim-tree.lua", -- Tree
     "akinsho/bufferline.nvim", -- Buffers
     "nvim-lualine/lualine.nvim", -- Lualine
-    "akinsho/toggleterm.nvim",
     "ahmedkhalf/project.nvim", -- Change directory automatically
     "goolord/alpha-nvim", -- Dashboard
     "folke/which-key.nvim", -- Which key popup
@@ -47,7 +46,7 @@ local plugins = {
     "williamboman/mason.nvim", -- LSP installer
     "williamboman/mason-lspconfig.nvim", -- LSP installer config
     "jose-elias-alvarez/null-ls.nvim", -- Formatters and linters
-    -- "RRethy/vim-illuminate", TODO: Fix this plugin error
+    "b0o/SchemaStore.nvim", -- jsonls schemas
 
     "nvim-telescope/telescope.nvim", -- Telescope
 
