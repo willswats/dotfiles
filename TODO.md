@@ -13,3 +13,5 @@
 - [ ] Add bufferline diagnostics
 - [ ] Add plugin that displays lsp progress
 - [ ] Remove alpha and replace with keybindings
+- [ ] Stop cmp completion upon pressing enter when none is selected
+- [ ] Fix vim-illuminate on unnwanted items (nvim-tree)
