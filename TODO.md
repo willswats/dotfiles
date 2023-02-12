@@ -1,10 +1,15 @@
 # TODO
 
-## QoL
+## Markdown
 
-- [ ] Make which-key appear after wait
-- [ ] Bufferline diagnostics
+- [ ] Markdown tables
+- [ ] Markdown checkboxes
+- [ ] Markdown preview
+- [ ] Auto format markdown length 80
 
-## Add Plugins
+## Other
 
-- [ ] Plugin that displays lsp progress
+- [ ] Move more bindings into which-key
+- [ ] Add bufferline diagnostics
+- [ ] Add plugin that displays lsp progress
+- [ ] Remove alpha and replace with keybindings
