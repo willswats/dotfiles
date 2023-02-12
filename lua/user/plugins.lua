@@ -47,6 +47,8 @@ local plugins = {
     "williamboman/mason-lspconfig.nvim", -- LSP installer config
     "jose-elias-alvarez/null-ls.nvim", -- Formatters and linters
     "b0o/SchemaStore.nvim", -- jsonls schemas
+    "RRethy/vim-illuminate", -- Highlight words
+    "folke/neodev.nvim", -- Annotations for neovim/vim functions
 
     "nvim-telescope/telescope.nvim", -- Telescope
 

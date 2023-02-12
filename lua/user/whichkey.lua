@@ -150,7 +150,7 @@ local mappings = {
         U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
     },
     p = {
-        name = "Lazy",
+        name = "plugins",
         i = { "<cmd>Lazy install<cr>", "Install" },
         s = { "<cmd>Lazy sync<cr>", "Sync" },
         S = { "<cmd>Lazy clear<cr>", "Status" },
