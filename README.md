@@ -9,16 +9,6 @@ My Neovim Config.
 
 ## Prerequisites
 
-Have `npm` (or `pnpm`), `pip` and `cargo` installed.
-
-If using `npm`:
-
-```bash
-alias pnpm="npm"
-```
-
-Else:
-
 ```bash
 pnpm install -g neovim
 python3 -m pip install --user pynvim
