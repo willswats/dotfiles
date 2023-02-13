@@ -17,8 +17,11 @@ if not status_ok then
 end
 
 local plugins = {
-    -- Core
+    -- Dependencies
     "nvim-lua/plenary.nvim", -- Dependency for many plugins
+    "MunifTanjim/nui.nvim", -- Dependency for noice.nvim
+
+    -- Core
     "nvim-tree/nvim-web-devicons", -- Icons
     "nvim-tree/nvim-tree.lua", -- Tree
     "akinsho/bufferline.nvim", -- Bufferline
@@ -26,6 +29,7 @@ local plugins = {
     "goolord/alpha-nvim", -- Dashboard
     "nvim-telescope/telescope.nvim", -- Telescope
     "folke/which-key.nvim", -- Which key
+    "folke/noice.nvim", -- Replaces UI
     "nvim-treesitter/nvim-treesitter", -- Treesitter
     "lewis6991/gitsigns.nvim", -- Git signs
     "numToStr/Comment.nvim", -- Comment
