@@ -43,7 +43,7 @@ local plugins = {
     -- Debug
     "mfussenegger/nvim-dap",
     "rcarriga/nvim-dap-ui",
-
+    
     -- LSP
     "neovim/nvim-lspconfig",
     "williamboman/mason.nvim",
@@ -63,7 +63,7 @@ local plugins = {
 
     -- Snippets
     "L3MON4D3/LuaSnip",
-    "rafamadriz/friendly-snippets",
+    "rafamadriz/friendly-snippets",    
 
     -- Treesitter
     "nvim-treesitter/nvim-treesitter",
