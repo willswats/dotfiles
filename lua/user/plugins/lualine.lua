@@ -7,6 +7,8 @@ local hide_in_width = function()
   return vim.fn.winwidth(0) > 80
 end
 
+local icons = require("user.icons")
+
 local diagnostics = {
     "diagnostics",
     sources = { "nvim_diagnostic" },
@@ -20,7 +22,7 @@ local diagnostics = {
 local diff = {
     "diff",
     colored = false,
-    symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
+    symbols = { added = icons.git.LineAdded, modified = icons.git.LineModified, removed = icons.git.LineRemoved },
     cond = hide_in_width
 }
 

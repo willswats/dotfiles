@@ -10,5 +10,5 @@
 
 - [ ] Move more bindings into which-key
 - [ ] Add bufferline diagnostics
-- [ ] Stop cmp completion upon pressing enter when none is selected
+- [ ] Add LSP server to lualine
 - [ ] Setup dap
