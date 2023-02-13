@@ -6,6 +6,7 @@ My Neovim Config.
 
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
+- [Acknowledgements](#acknowledgements)
 
 ## Prerequisites
 
@@ -34,3 +35,8 @@ SSH:
 ```bash
 git clone git@github.com:willswats/neovim-config.git ~/.config/nvim
 ```
+
+## Acknowledgements
+
+I've used code from [LunarVim](https://github.com/lunarvim/lunarvim)
+throughout the config.
