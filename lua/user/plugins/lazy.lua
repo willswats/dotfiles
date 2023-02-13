@@ -41,7 +41,7 @@ local plugins = {
 
 
     {
-        'VonHeikemen/lsp-zero.nvim',
+        'VonHeikemen/lsp-zero.nvim', -- LSP configuration
         branch = 'v1.x',
         dependencies = {
             -- LSP Support
