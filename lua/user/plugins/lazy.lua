@@ -21,7 +21,7 @@ local plugins = {
     "nvim-lua/plenary.nvim", -- Dependency for many plugins
     "MunifTanjim/nui.nvim", -- Dependency for noice.nvim
 
-    -- Core
+    -- General
     "nvim-tree/nvim-web-devicons", -- Icons
     "nvim-tree/nvim-tree.lua", -- Tree
     "akinsho/bufferline.nvim", -- Bufferline
@@ -35,17 +35,15 @@ local plugins = {
     "numToStr/Comment.nvim", -- Comment
     "JoosepAlviste/nvim-ts-context-commentstring", -- Comment
     "jose-elias-alvarez/null-ls.nvim", -- Format & Lint
-    "mfussenegger/nvim-dap", -- Debug
-    "rcarriga/nvim-dap-ui", -- Debug UI
-    "rebelot/kanagawa.nvim", -- Colorscheme
-
-    -- Optional
     "ahmedkhalf/project.nvim", -- Auto CD
     "windwp/nvim-autopairs", -- Auto pair
     "lukas-reineke/indent-blankline.nvim", -- Show indent line
     "RRethy/vim-illuminate", -- Illuminate text
-    "mg979/vim-visual-multi", -- Multiple cursors
+    "mfussenegger/nvim-dap", -- Debug
+    "rcarriga/nvim-dap-ui", -- Debug UI
+    "rebelot/kanagawa.nvim", -- Colorscheme
 
+    -- LSP
     {
         'VonHeikemen/lsp-zero.nvim', -- LSP configuration
         branch = 'v1.x',
