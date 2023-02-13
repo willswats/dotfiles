@@ -5,6 +5,8 @@ local lsp = require('lsp-zero').preset({
         suggest_lsp_servers = false,
     })
 
+local icons = require("user.icons")
+
 -- make sure this servers are installed
 -- see :help lsp-zero.ensure_installed()
 lsp.ensure_installed({
@@ -42,6 +44,15 @@ end
 lsp.on_attach(function(_, bufnr)
   lsp_keymaps(bufnr)
 end)
+
+lsp.set_preferences({
+    sign_icons = {
+        error = icons.diagnostics.Error,
+        warn = icons.diagnostics.Warning,
+        hint = icons.diagnostics.Hint,
+        info = icons.diagnostics.Information
+    }
+})
 
 -- configure lua language server for neovim
 -- see :help lsp-zero.nvim_workspace()
