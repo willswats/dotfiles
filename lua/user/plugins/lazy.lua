@@ -17,6 +17,7 @@ if not status_ok then
 end
 
 local plugins = {
+    -- Core
     "nvim-lua/plenary.nvim", -- Dependency for many plugins
     "nvim-tree/nvim-web-devicons", -- Icons
     "nvim-tree/nvim-tree.lua", -- Tree
@@ -30,15 +31,16 @@ local plugins = {
     "numToStr/Comment.nvim", -- Comment
     "JoosepAlviste/nvim-ts-context-commentstring", -- Comment
     "jose-elias-alvarez/null-ls.nvim", -- Format & Lint
-    "lunarvim/darkplus.nvim", -- Colorscheme
+    "mfussenegger/nvim-dap", -- Debug
+    "rcarriga/nvim-dap-ui", -- Debug UI
+    "rebelot/kanagawa.nvim", -- Colorscheme
+
+    -- Optional
     "ahmedkhalf/project.nvim", -- Auto CD
     "windwp/nvim-autopairs", -- Auto pair
     "lukas-reineke/indent-blankline.nvim", -- Show indent line
     "RRethy/vim-illuminate", -- Illuminate text
     "mg979/vim-visual-multi", -- Multiple cursors
-    "mfussenegger/nvim-dap", -- Debug
-    "rcarriga/nvim-dap-ui", -- Debug UI
-
 
     {
         'VonHeikemen/lsp-zero.nvim', -- LSP configuration
