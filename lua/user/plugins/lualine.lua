@@ -3,11 +3,14 @@ if not status_ok then
   return
 end
 
+local icons_status_ok, icons = pcall(require, "user.icons")
+if not icons_status_ok then
+  return
+end
+
 local hide_in_width = function()
   return vim.fn.winwidth(0) > 80
 end
-
-local icons = require("user.icons")
 
 local diagnostics = {
     "diagnostics",
@@ -22,7 +25,7 @@ local diagnostics = {
 local diff = {
     "diff",
     colored = false,
-    symbols = { added = icons.git.LineAdded, modified = icons.git.LineModified, removed = icons.git.LineRemoved },
+    symbols = { added = icons.git.LineAdded .. " ", modified = icons.git.LineModified .. " ", removed = icons.git.LineRemoved .. " " },
     cond = hide_in_width
 }
 

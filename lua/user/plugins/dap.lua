@@ -13,7 +13,10 @@ if not dap_install_status_ok then
   return
 end
 
-local icons = require("user.icons")
+local icons_status_ok, icons = pcall(require, "user.icons")
+if not icons_status_ok then
+  return
+end
 
 dap_install.setup {}
 

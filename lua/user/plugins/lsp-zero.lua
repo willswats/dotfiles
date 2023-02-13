@@ -5,7 +5,10 @@ local lsp = require('lsp-zero').preset({
         suggest_lsp_servers = false,
     })
 
-local icons = require("user.icons")
+local icons_status_ok, icons = pcall(require, "user.icons")
+if not icons_status_ok then
+  return
+end
 
 -- make sure this servers are installed
 -- see :help lsp-zero.ensure_installed()

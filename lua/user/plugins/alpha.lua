@@ -1,6 +1,17 @@
-local alpha = require("alpha");
-local dashboard = require("alpha.themes.dashboard")
-local icons = require("user.icons")
+local status_ok, alpha = pcall(require, "alpha")
+if not status_ok then
+  return
+end
+
+local dashboard_status_ok, dashboard = pcall(require, "alpha.themes.dashboard")
+if not dashboard_status_ok then
+  return
+end
+
+local icons_status_ok, icons = pcall(require, "user.icons")
+if not icons_status_ok then
+  return
+end
 
 dashboard.section.header.val = {
     [[                               __                ]],

@@ -3,7 +3,10 @@ if not status_ok then
   return
 end
 
-local icons = require("user.icons")
+local icons_status_ok, icons = pcall(require, "user.icons")
+if not icons_status_ok then
+  return
+end
 
 vim.g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
 vim.g.indent_blankline_filetype_exclude = {

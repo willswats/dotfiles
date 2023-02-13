@@ -4,7 +4,11 @@ if not status_ok then
 end
 
 local actions = require "telescope.actions"
-local icons = require("user.icons")
+
+local icons_status_ok, icons = pcall(require, "user.icons")
+if not icons_status_ok then
+  return
+end
 
 telescope.setup {
     defaults = {
