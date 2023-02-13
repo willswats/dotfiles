@@ -1,20 +1,20 @@
-local dap_status_ok, dap = pcall(require, "dap")
-if not dap_status_ok then
+local status_ok_dap, dap = pcall(require, "dap")
+if not status_ok_dap then
   return
 end
 
-local dap_ui_status_ok, dapui = pcall(require, "dapui")
-if not dap_ui_status_ok then
+local status_ok_dapui, dapui = pcall(require, "dapui")
+if not status_ok_dapui then
   return
 end
 
-local dap_install_status_ok, dap_install = pcall(require, "dap-install")
-if not dap_install_status_ok then
+local status_ok_dap_install, dap_install = pcall(require, "dap-install")
+if not status_ok_dap_install then
   return
 end
 
-local icons_status_ok, icons = pcall(require, "user.icons")
-if not icons_status_ok then
+local status_ok_icons, icons = pcall(require, "user.icons")
+if not status_ok_icons then
   return
 end
 

@@ -1,15 +1,15 @@
-local status_ok, alpha = pcall(require, "alpha")
-if not status_ok then
+local status_ok_alpha, alpha = pcall(require, "alpha")
+if not status_ok_alpha then
   return
 end
 
-local dashboard_status_ok, dashboard = pcall(require, "alpha.themes.dashboard")
-if not dashboard_status_ok then
+local status_ok_dashboard, dashboard = pcall(require, "alpha.themes.dashboard")
+if not status_ok_dashboard then
   return
 end
 
-local icons_status_ok, icons = pcall(require, "user.icons")
-if not icons_status_ok then
+local status_ok_icons, icons = pcall(require, "user.icons")
+if not status_ok_icons then
   return
 end
 

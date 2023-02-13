@@ -1,10 +1,10 @@
-local status_ok, gitsigns = pcall(require, "gitsigns")
-if not status_ok then
+local status_ok_gitsigns, gitsigns = pcall(require, "gitsigns")
+if not status_ok_gitsigns then
   return
 end
 
-local icons_status_ok, icons = pcall(require, "user.icons")
-if not icons_status_ok then
+local status_ok_icons, icons = pcall(require, "user.icons")
+if not status_ok_icons then
   return
 end
 

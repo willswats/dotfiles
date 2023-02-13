@@ -1,15 +1,15 @@
-local status_ok, nvim_tree = pcall(require, "nvim-tree")
-if not status_ok then
+local status_ok_nvim_tree, nvim_tree = pcall(require, "nvim-tree")
+if not status_ok_nvim_tree then
   return
 end
 
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
+local status_ok_nvim_tree_config, nvim_tree_config = pcall(require, "nvim-tree.config")
+if not status_ok_nvim_tree_config then
   return
 end
 
-local icons_status_ok, icons = pcall(require, "user.icons")
-if not icons_status_ok then
+local status_ok_icons, icons = pcall(require, "user.icons")
+if not status_ok_icons then
   return
 end
 

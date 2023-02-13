@@ -1,17 +1,20 @@
-local lsp = require('lsp-zero').preset({
-        name = 'minimal',
-        set_lsp_keymaps = false,
-        manage_nvim_cmp = true,
-        suggest_lsp_servers = false,
-    })
-
-local icons_status_ok, icons = pcall(require, "user.icons")
-if not icons_status_ok then
+local status_ok_lsp, lsp = pcall(require, "lsp-zero")
+if not status_ok_lsp then
   return
 end
 
--- make sure this servers are installed
--- see :help lsp-zero.ensure_installed()
+local status_ok_icons, icons = pcall(require, "user.icons")
+if not status_ok_icons then
+  return
+end
+
+lsp.preset({
+    name = 'minimal',
+    set_lsp_keymaps = false,
+    manage_nvim_cmp = true,
+    suggest_lsp_servers = false,
+})
+
 lsp.ensure_installed({
     "marksman",
     "html",

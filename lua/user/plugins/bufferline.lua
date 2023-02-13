@@ -1,10 +1,10 @@
-local status_ok, bufferline = pcall(require, "bufferline")
-if not status_ok then
+local status_ok_bufferline, bufferline = pcall(require, "bufferline")
+if not status_ok_bufferline then
   return
 end
 
-local icons_status_ok, icons = pcall(require, "user.icons")
-if not icons_status_ok then
+local status_ok_icons, icons = pcall(require, "user.icons")
+if not status_ok_icons then
   return
 end
 

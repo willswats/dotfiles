@@ -1,12 +1,15 @@
-local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
+local status_ok_telescope, telescope = pcall(require, "telescope")
+if not status_ok_telescope then
   return
 end
 
-local actions = require "telescope.actions"
+local status_ok_actions, actions = pcall(require, "telescope.actions")
+if not status_ok_actions then
+  return
+end
 
-local icons_status_ok, icons = pcall(require, "user.icons")
-if not icons_status_ok then
+local status_ok_icons, icons = pcall(require, "user.icons")
+if not status_ok_icons then
   return
 end
 

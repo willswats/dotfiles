@@ -1,10 +1,10 @@
-local status_ok, which_key = pcall(require, "which-key")
-if not status_ok then
+local status_ok_which_key, which_key = pcall(require, "which-key")
+if not status_ok_which_key then
   return
 end
 
-local icons_status_ok, icons = pcall(require, "user.icons")
-if not icons_status_ok then
+local status_ok_icons, icons = pcall(require, "user.icons")
+if not status_ok_icons then
   return
 end
 

@@ -1,10 +1,10 @@
-local status_ok, lualine = pcall(require, "lualine")
-if not status_ok then
+local status_ok_lualine, lualine = pcall(require, "lualine")
+if not status_ok_lualine then
   return
 end
 
-local icons_status_ok, icons = pcall(require, "user.icons")
-if not icons_status_ok then
+local status_ok_icons, icons = pcall(require, "user.icons")
+if not status_ok_icons then
   return
 end
 

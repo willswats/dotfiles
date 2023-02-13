@@ -1,5 +1,5 @@
-local status_ok, npairs = pcall(require, "nvim-autopairs")
-if not status_ok then
+local status_ok_npairs, npairs = pcall(require, "nvim-autopairs")
+if not status_ok_npairs then
   return
 end
 

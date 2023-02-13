@@ -1,5 +1,5 @@
-local status_ok, illuminate = pcall(require, "illuminate")
-if not status_ok then
+local status_ok_illuminate, illuminate = pcall(require, "illuminate")
+if not status_ok_illuminate then
   return
 end
 

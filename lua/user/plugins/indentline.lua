@@ -1,5 +1,5 @@
-local status_ok, indent_blankline = pcall(require, "indent_blankline")
-if not status_ok then
+local status_ok_indentline, indentline = pcall(require, "indent_blankline")
+if not status_ok_indentline then
   return
 end
 
@@ -47,6 +47,6 @@ vim.g.indent_blankline_context_patterns = {
     "operation_type",
 }
 
-indent_blankline.setup({
+indentline.setup({
     show_current_context = true,
 })
