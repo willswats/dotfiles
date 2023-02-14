@@ -10,6 +10,6 @@ null_ls.setup({
   debug = false,
   sources = {
     formatting.prettier,
-    diagnostics.markdownlint
+    diagnostics.markdownlint.with({ extra_args = { "--disable", "MD013" } })
   },
 })

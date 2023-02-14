@@ -41,5 +41,4 @@ git clone git@github.com:willswats/neovim-config.git ~/.config/nvim
 
 ## Acknowledgements
 
-I've used code from [LunarVim](https://github.com/lunarvim/lunarvim)
-throughout the config.
+I've used code from [LunarVim](https://github.com/lunarvim/lunarvim) throughout the config.
