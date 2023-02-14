@@ -102,7 +102,9 @@ local vopts = {
 -- see https://neovim.io/doc/user/map.html#:map-cmd
 local vmappings = {
   ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle linewise (visual)" },
+  ["t"] = { "<cmd>MkdnToggleToDo<cr>", "Toggle to-do" },
 }
+
 local mappings = {
   [";"] = { "<cmd>Alpha<CR>", "Dashboard" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
@@ -112,6 +114,7 @@ local mappings = {
   ["f"] = { "<cmd>Telescope find_files<CR>", "Find Files" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
+  ["t"] = { "<cmd>MkdnToggleToDo<cr>", "Toggle to-do" },
   b = {
     name = "Buffers",
     j = { "<cmd>BufferLinePick<cr>", "Jump" },
