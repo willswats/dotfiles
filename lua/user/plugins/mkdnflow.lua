@@ -72,9 +72,9 @@ mkdnflow.setup({
     MkdnPrevHeading = false,
     MkdnGoBack = false,
     MkdnGoForward = false,
-    MkdnCreateLink = false, -- see MkdnEnter
-    MkdnCreateLinkFromClipboard = false, -- see MkdnEnter
-    MkdnFollowLink = false, -- see MkdnEnter
+    MkdnCreateLink = false,
+    MkdnCreateLinkFromClipboard = false,
+    MkdnFollowLink = false,
     MkdnDestroyLink = false,
     MkdnTagSpan = false,
     MkdnMoveSource = false,
