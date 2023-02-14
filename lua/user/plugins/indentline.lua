@@ -48,5 +48,5 @@ vim.g.indent_blankline_context_patterns = {
 }
 
 indentline.setup({
-  show_current_context = true,
+  -- show_current_context = true,
 })

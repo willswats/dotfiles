@@ -37,7 +37,10 @@ local plugins = {
   "JoosepAlviste/nvim-ts-context-commentstring", -- Comment
   "ahmedkhalf/project.nvim", -- Auto CD
   "windwp/nvim-autopairs", -- Auto pair
-  "lukas-reineke/indent-blankline.nvim", -- Show indent line
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    event = "BufReadPre", -- Fix blue cursor
+  }, -- Show indent line
   "RRethy/vim-illuminate", -- Illuminate text
   "mfussenegger/nvim-dap", -- Debug
   "rcarriga/nvim-dap-ui", -- Debug UI
