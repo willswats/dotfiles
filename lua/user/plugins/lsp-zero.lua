@@ -9,21 +9,20 @@ if not status_ok_icons then
 end
 
 lsp.preset({
-    name = 'minimal',
-    set_lsp_keymaps = false,
-    manage_nvim_cmp = true,
-    suggest_lsp_servers = false,
+  name = 'minimal',
+  set_lsp_keymaps = false,
+  manage_nvim_cmp = true,
+  suggest_lsp_servers = false,
 })
 
 lsp.ensure_installed({
-    "marksman",
-    "html",
-    "cssls",
-    "jsonls",
-    "tsserver",
-    "lua_ls",
-    "rust_analyzer",
-    "taplo",
+  "html",
+  "cssls",
+  "jsonls",
+  "tsserver",
+  "lua_ls",
+  "rust_analyzer",
+  "taplo",
 })
 
 -- Setup keymaps (which-key)
@@ -52,12 +51,12 @@ lsp.on_attach(function(_, bufnr)
 end)
 
 lsp.set_preferences({
-    sign_icons = {
-        error = icons.diagnostics.Error,
-        warn = icons.diagnostics.Warning,
-        hint = icons.diagnostics.Hint,
-        info = icons.diagnostics.Information
-    }
+  sign_icons = {
+    error = icons.diagnostics.Error,
+    warn = icons.diagnostics.Warning,
+    hint = icons.diagnostics.Hint,
+    info = icons.diagnostics.Information
+  }
 })
 
 -- configure lua language server for neovim
@@ -67,5 +66,5 @@ lsp.nvim_workspace()
 lsp.setup()
 
 vim.diagnostic.config({
-    virtual_text = true,
+  virtual_text = true,
 })
