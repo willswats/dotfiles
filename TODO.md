@@ -3,7 +3,6 @@
 ## Add
 
 - [ ] Markdown checkboxes
-- [ ] Auto format markdown length 80
 
 ## Refactor
 
