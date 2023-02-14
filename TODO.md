@@ -8,7 +8,5 @@
 
 ## Other
 
-- [ ] Add LSP server to lualine
-- [ ] Add bufferline diagnostics
 - [ ] Move more bindings into which-key
 - [ ] Setup dap
