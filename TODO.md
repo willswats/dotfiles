@@ -25,3 +25,5 @@
 
 - [ ] Setup dap
 - [ ] Setup lazy loading plugins
+- [ ] Multi cursor / alternatives
+- [ ] Better search / replace
