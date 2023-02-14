@@ -25,7 +25,7 @@ lualine.setup({
     lualine_a = { "mode" },
     lualine_b = { "branch", "diff" },
     lualine_c = {},
-    lualine_x = { spaces, "diagnostics", "filetype" },
+    lualine_x = { spaces, "filetype" },
     lualine_y = { "progress" },
     lualine_z = { 'location' }
   },
