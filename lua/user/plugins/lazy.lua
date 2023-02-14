@@ -21,7 +21,8 @@ local plugins = {
     "nvim-lua/plenary.nvim", -- Dependency for many plugins
     "MunifTanjim/nui.nvim", -- Dependency for noice.nvim
 
-    -- General
+    -- Core
+    "nvim-treesitter/nvim-treesitter", -- Treesitter
     "nvim-tree/nvim-web-devicons", -- Icons
     "nvim-tree/nvim-tree.lua", -- Tree
     "akinsho/bufferline.nvim", -- Bufferline
@@ -30,15 +31,15 @@ local plugins = {
     "nvim-telescope/telescope.nvim", -- Telescope
     "folke/which-key.nvim", -- Which key
     "folke/noice.nvim", -- Replaces UI
-    "nvim-treesitter/nvim-treesitter", -- Treesitter
     "lewis6991/gitsigns.nvim", -- Git signs
+    "jose-elias-alvarez/null-ls.nvim", -- Format & Lint
     "numToStr/Comment.nvim", -- Comment
     "JoosepAlviste/nvim-ts-context-commentstring", -- Comment
-    "jose-elias-alvarez/null-ls.nvim", -- Format & Lint
     "ahmedkhalf/project.nvim", -- Auto CD
     "windwp/nvim-autopairs", -- Auto pair
     "lukas-reineke/indent-blankline.nvim", -- Show indent line
     "RRethy/vim-illuminate", -- Illuminate text
+    "jakewvincent/mkdnflow.nvim", -- Markdown editing helpers
     "mfussenegger/nvim-dap", -- Debug
     "rcarriga/nvim-dap-ui", -- Debug UI
     "rebelot/kanagawa.nvim", -- Colorscheme

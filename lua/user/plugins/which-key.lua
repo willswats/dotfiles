@@ -220,8 +220,12 @@ local mappings = {
     s = {
         name = "Search",
         b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-        c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+        c = {
+            "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
+            "Colorscheme with Preview",
+        },
         f = { "<cmd>Telescope find_files<cr>", "Find File" },
+        p = { "<cmd>Telescope projects<cr>", "Find projects" },
         h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
         H = { "<cmd>Telescope highlights<cr>", "Find highlight groups" },
         M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
@@ -231,10 +235,6 @@ local mappings = {
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
         C = { "<cmd>Telescope commands<cr>", "Commands" },
         l = { "<cmd>Telescope resume<cr>", "Resume last search" },
-        p = {
-            "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
-            "Colorscheme with Preview",
-        },
     },
     T = {
         name = "Treesitter",
