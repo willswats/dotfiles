@@ -35,10 +35,6 @@ local plugins = {
   "jose-elias-alvarez/null-ls.nvim", -- Format & Lint
   "numToStr/Comment.nvim", -- Comment
   "JoosepAlviste/nvim-ts-context-commentstring", -- Comment
-  "mfussenegger/nvim-dap", -- Debug
-  "rcarriga/nvim-dap-ui", -- Debug UI
-  "catppuccin/nvim", -- Colorscheme
-
   "ahmedkhalf/project.nvim", -- Auto CD
   "windwp/nvim-autopairs", -- Auto pair
   {
@@ -46,6 +42,10 @@ local plugins = {
     event = "BufReadPre", -- Fix blue cursor
   }, -- Show indent line
   "RRethy/vim-illuminate", -- Illuminate text
+  "mfussenegger/nvim-dap", -- Debug
+  "rcarriga/nvim-dap-ui", -- Debug UI
+  "catppuccin/nvim", -- Colorscheme
+
   "jakewvincent/mkdnflow.nvim", -- Markdown editing
 
   -- LSP
