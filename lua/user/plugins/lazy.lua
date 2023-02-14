@@ -42,7 +42,7 @@ local plugins = {
     "jakewvincent/mkdnflow.nvim", -- Markdown editing helpers
     "mfussenegger/nvim-dap", -- Debug
     "rcarriga/nvim-dap-ui", -- Debug UI
-    "rebelot/kanagawa.nvim", -- Colorscheme
+    "catppuccin/nvim", -- Colorscheme
 
     -- LSP
     {
