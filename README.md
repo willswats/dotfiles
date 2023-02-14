@@ -4,7 +4,10 @@ My Neovim Config.
 
 ## Table of Contents
 
+- [Neovim Config](#neovim-config)
+- [Table of Contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
+  - [Formatters and Linters](#formatters-and-linters)
 - [Installation](#installation)
 - [Acknowledgements](#acknowledgements)
 
@@ -16,7 +19,7 @@ python3 -m pip install --user pynvim
 cargo install fd-find ripgrep
 ```
 
-### Formatters & Linters
+### Formatters and Linters
 
 ```bash
 pnpm i -g prettier markdownlint-cli
