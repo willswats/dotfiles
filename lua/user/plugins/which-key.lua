@@ -123,18 +123,9 @@ local mappings = {
     p = { "<cmd>BufferLinePick<cr>", "Pick" },
     c = { "<cmd>BufferLinePickClose<cr>", "Pick close" },
     h = { "<cmd>BufferLineCloseLeft<cr>", "Close left" },
-    l = {
-      "<cmd>BufferLineCloseRight<cr>",
-      "Close right",
-    },
-    D = {
-      "<cmd>BufferLineSortByDirectory<cr>",
-      "Sort by directory",
-    },
-    L = {
-      "<cmd>BufferLineSortByExtension<cr>",
-      "Sort by language",
-    },
+    l = { "<cmd>BufferLineCloseRight<cr>", "Close right" },
+    D = { "<cmd>BufferLineSortByDirectory<cr>", "Sort by directory" },
+    L = { "<cmd>BufferLineSortByExtension<cr>", "Sort by language", },
     f = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
   },
   d = {
@@ -213,14 +204,8 @@ local mappings = {
     e = { "<cmd>Telescope quickfix<cr>", "Quick fix" },
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code action" },
     f = { "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", "Format" },
-    j = {
-      "<cmd>lua vim.diagnostic.goto_next()<cr>",
-      "Next diagnostic",
-    },
-    k = {
-      "<cmd>lua vim.diagnostic.goto_prev()<cr>",
-      "Prev diagnostic",
-    },
+    j = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next diagnostic" },
+    k = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev diagnostic" },
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens action" },
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
     d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
