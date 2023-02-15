@@ -11,19 +11,12 @@
 
 ## Note-taking
 
-- [ ] Markdown templates
-- [ ] Markdown preview
+- [ ] Markdown templates - [telekasten.nvim](https://github.com/renerocksai/telekasten.nvim)
 - [ ] Fix mkdnflow markdown checkbox toggling to X
-
-### Alternatives
-
-- [ ] Remove markdownt-lint?
-- [ ] Replace mkdnflow?
-- [ ] Use [orgmode](https://github.com/nvim-orgmode/orgmode)?
 
 ## Setup
 
 - [ ] Setup dap
 - [ ] Setup lazy loading plugins
 - [ ] Multi cursor / alternatives
-- [ ] Better search / replace
+- [ ] Better search and replace
