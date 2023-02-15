@@ -81,6 +81,9 @@ local setup = {
   },
 }
 
+-- Close the tree with certain commands
+local tree_close = "<cmd>NvimTreeClose<cr>"
+
 local opts = {
   mode = "n", -- NORMAL mode
   prefix = "<leader>",
@@ -110,7 +113,7 @@ local vmappings = {
 
 local mappings = {
   ["w"] = { "<cmd>w!<cr>", "Write" },
-  ["q"] = { "<cmd>confirm q<cr>", "Quit" },
+  ["q"] = { tree_close .. "<cmd>confirm q<cr>", "Quit" },
   ["c"] = { function(bufnr) BUF_KILL("bd", bufnr, false) end, "Close buffer" },
   ["h"] = { "<cmd>nohlsearch<cr>", "No highlight" },
   ["r"] = { ":%s/", "Replace" },
@@ -201,9 +204,9 @@ local mappings = {
   },
   t = {
     name = "Terminal",
-    f = { "<cmd>term fish<cr>", "Fish" },
-    b = { "<cmd>term bash<cr>", "Bash" },
-    g = { "<cmd>term lazygit<cr>", "Lazygit" }
+    f = { tree_close .. "<cmd>term fish<cr>", "Fish" },
+    b = { tree_close .. "<cmd>term bash<cr>", "Bash" },
+    g = { tree_close .. "<cmd>term lazygit<cr>", "Lazygit" }
   },
   m = {
     name = "Markdown",
