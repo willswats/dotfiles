@@ -3,8 +3,6 @@
 ## High priority
 
 - [ ] Setup dap
-- [ ] Setup toggleterm
-  - [ ] Create which-key bindings
 - [ ] Create CD which-key bind
 
 ## Medium priority
