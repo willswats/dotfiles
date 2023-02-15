@@ -182,7 +182,7 @@ local mappings = {
   },
   g = {
     name = "Git",
-    g = { "<cmd>term lazygit<cr>", "Lazygit" },
+    g = { "<cmd>NvimTreeClose<cr><cmd>term lazygit<cr>", "Lazygit" },
     o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
