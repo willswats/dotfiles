@@ -3,7 +3,7 @@
 ## High priority
 
 - [ ] Setup dap
-- [ ] Create CD which-key bind
+- [ ] Re-order which-key bindings (telescope all in one section)
 
 ## Medium priority
 
