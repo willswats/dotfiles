@@ -61,7 +61,7 @@ local setup = {
     align = "left", -- align columns left, center or right
   },
   ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
-  hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
+  hidden = { "<silent>", "<cmd>", "<Cmd>", "<cr>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
   show_help = true, -- show help message on the command line when the popup is visible
   show_keys = true, -- show the currently pressed key and its label as a message in the command line
   triggers = "auto", -- automatically setup triggers
@@ -106,13 +106,14 @@ local vmappings = {
 }
 
 local mappings = {
-  [";"] = { "<cmd>Alpha<CR>", "Alpha" },
-  ["w"] = { "<cmd>w!<CR>", "Write" },
+  [";"] = { "<cmd>Alpha<cr>", "Alpha" },
+  ["w"] = { "<cmd>w!<cr>", "Write" },
   ["W"] = { "<cmd>noautocmd w<cr>", "Write without formatting" },
-  ["q"] = { "<cmd>confirm q<CR>", "Quit" },
+  ["q"] = { "<cmd>NvimTreeClose<cr><cmd>confirm q<cr>", "Quit" },
+  ["r"] = { ":%s/", "Replace" },
   ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
-  ["h"] = { "<cmd>nohlsearch<CR>", "No highlight" },
-  ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
+  ["h"] = { "<cmd>nohlsearch<cr>", "No highlight" },
+  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["c"] = { function(bufnr) BUF_KILL("bd", bufnr, false) end, "Close buffer" },
   ["f"] = { "<cmd>Telescope find_files<cr>", "Find files" },
   ["t"] = { "<cmd>MkdnToggleToDo<cr>", "Toggle to-do" },
@@ -223,9 +224,9 @@ local mappings = {
     },
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens action" },
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-    d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
-    D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration" },
-    o = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Open float" }
+    d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
+    D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration" },
+    o = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Open float" }
   },
 }
 

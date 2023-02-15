@@ -26,11 +26,6 @@ keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", opts)
 keymap("n", "<A-l>", ":BufferLineMoveNext<CR>", opts)
 keymap("n", "<A-h>", ":BufferLineMovePrev<CR>", opts)
 
--- Quick replace
-vim.keymap.set("n", "?", function()
-  return ":%s/" .. vim.fn.expand("<cword>") .. "/"
-end, { expr = true })
-
 -- Insert --
 -- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", opts)
