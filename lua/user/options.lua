@@ -40,7 +40,6 @@ local options = {
   spelllang = "en",
   scrolloff = 8, -- is one of my fav
   sidescrolloff = 8,
-  shell = "/usr/bin/fish", -- shell in terminal
 }
 
 for k, v in pairs(options) do

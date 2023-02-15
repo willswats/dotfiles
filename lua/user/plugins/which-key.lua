@@ -102,23 +102,24 @@ local vopts = {
 -- see https://neovim.io/doc/user/map.html#:map-cmd
 local vmappings = {
   ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment" },
-  ["t"] = { "<cmd>MkdnToggleToDo<cr>", "Toggle to-do" },
+  m = {
+    name = "Markdown",
+    t = { "<cmd>MkdnToggleToDo<cr>", "Toggle to-do" },
+  }
 }
 
 local mappings = {
-  [";"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["w"] = { "<cmd>w!<cr>", "Write" },
-  ["W"] = { "<cmd>noautocmd w<cr>", "Write without formatting" },
-  ["q"] = { "<cmd>NvimTreeClose<cr><cmd>confirm q<cr>", "Quit" },
-  ["r"] = { ":%s/", "Replace" },
-  ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
-  ["h"] = { "<cmd>nohlsearch<cr>", "No highlight" },
-  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+  ["q"] = { "<cmd>confirm q<cr>", "Quit" },
   ["c"] = { function(bufnr) BUF_KILL("bd", bufnr, false) end, "Close buffer" },
-  ["f"] = { "<cmd>Telescope find_files<cr>", "Find files" },
-  ["t"] = { "<cmd>MkdnToggleToDo<cr>", "Toggle to-do" },
+  ["h"] = { "<cmd>nohlsearch<cr>", "No highlight" },
+  ["r"] = { ":%s/", "Replace" },
+  [";"] = { "<cmd>Alpha<cr>", "Alpha" },
+  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+  ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
   b = {
     name = "Buffer",
+    W = { "<cmd>noautocmd w<cr>", "Write without formatting" },
     p = { "<cmd>BufferLinePick<cr>", "Pick" },
     c = { "<cmd>BufferLinePickClose<cr>", "Pick close" },
     h = { "<cmd>BufferLineCloseLeft<cr>", "Close left" },
@@ -164,24 +165,22 @@ local mappings = {
     l = { "<cmd>Lazy log<cr>", "Log" },
     d = { "<cmd>Lazy debug<cr>", "Debug" },
   },
-  s = {
-    name = "Search",
+  f = {
+    name = "Find",
+    f = { "<cmd>Telescope find_files<cr>", "Files" },
     c = {
       "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
       "Colorscheme",
     },
+    C = { "<cmd>Telescope commands<cr>", "Commands" },
     p = { "<cmd>Telescope projects<cr>", "Projects" },
     h = { "<cmd>Telescope help_tags<cr>", "Help" },
-    H = { "<cmd>Telescope highlights<cr>", "Highlights" },
     r = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
     t = { "<cmd>Telescope live_grep<cr>", "Text" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-    C = { "<cmd>Telescope commands<cr>", "Commands" },
-    l = { "<cmd>Telescope resume<cr>", "Resume" },
   },
   g = {
     name = "Git",
-    g = { "<cmd>NvimTreeClose<cr><cmd>term lazygit<cr>", "Lazygit" },
     o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
@@ -228,6 +227,16 @@ local mappings = {
     D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration" },
     o = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Open float" }
   },
+  t = {
+    name = "Terminal",
+    f = { "<cmd>term fish<cr>", "Fish" },
+    b = { "<cmd>term bash<cr>", "Bash" },
+    g = { "<cmd>term lazygit<cr>", "Lazygit" }
+  },
+  m = {
+    name = "Markdown",
+    t = { "<cmd>MkdnToggleToDo<cr>", "Toggle to-do" },
+  }
 }
 
 which_key.setup(setup)
