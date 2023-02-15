@@ -118,16 +118,12 @@ local mappings = {
   ["t"] = { "<cmd>MkdnToggleToDo<cr>", "Toggle to-do" },
   b = {
     name = "Buffer",
-    b = { "<cmd>BufferLineMovePrev<cr>", "Move Previous" },
-    n = { "<cmd>BufferLineMoveNext<cr>", "Move Next" },
-    p = { "<cmd>BufferLinePick<cr>", "Pick" },
-    c = { "<cmd>BufferLinePickClose<cr>", "Pick Close" },
+    f = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
     h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
     l = {
       "<cmd>BufferLineCloseRight<cr>",
       "Close all to the right",
     },
-    f = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
     D = {
       "<cmd>BufferLineSortByDirectory<cr>",
       "Sort by directory",
