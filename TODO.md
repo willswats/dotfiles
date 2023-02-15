@@ -1,13 +1,7 @@
 # TODO
 
-## High priority
-
+- [ ] Add more mkdnflow which-key bindings
 - [ ] Setup dap
-- [ ] Re-order which-key bindings (telescope all in one section)
-
-## Medium priority
-
-## Low priority
 
 - [ ] Fix mkdnflow markdown checkbox toggling to X
 - [ ] Find a better way to deal with Markdownlint MD013
