@@ -10,11 +10,34 @@ end
 
 gitsigns.setup {
   signs = {
-    add = { hl = "GitSignsAdd", text = icons.ui.LineLeft, numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
-    change = { hl = "GitSignsChange", text = icons.ui.LineLeft, numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
-    delete = { hl = "GitSignsDelete", text = icons.ui.TriangleShortArrowRight, numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
-    topdelete = { hl = "GitSignsDelete", text = icons.ui.TriangleShortArrowRight, numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
-    changedelete = { hl = "GitSignsChange", text = icons.ui.LineLeft, numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
+    add = {
+      hl = "GitSignsAdd",
+      text = icons.ui.LineLeft,
+      numhl = "GitSignsAddNr",
+      linehl = "GitSignsAddLn"
+    },
+    change = {
+      hl = "GitSignsChange",
+      text = icons.ui.LineLeft,
+      numhl = "GitSignsChangeNr",
+      linehl = "GitSignsChangeLn" },
+    delete = {
+      hl = "GitSignsDelete",
+      text = icons.ui.TriangleShortArrowRight,
+      numhl = "GitSignsDeleteNr",
+      linehl = "GitSignsDeleteLn"
+    },
+    topdelete = {
+      hl = "GitSignsDelete",
+      text = icons.ui.TriangleShortArrowRight,
+      numhl = "GitSignsDeleteNr",
+      linehl = "GitSignsDeleteLn"
+    },
+    changedelete = {
+      hl = "GitSignsChange",
+      text = icons.ui.LineLeft,
+      numhl = "GitSignsChangeNr",
+      linehl = "GitSignsChangeLn" },
   },
   signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
   numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
