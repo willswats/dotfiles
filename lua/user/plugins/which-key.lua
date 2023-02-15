@@ -114,9 +114,9 @@ local mappings = {
   ["c"] = { function(bufnr) BUF_KILL("bd", bufnr, false) end, "Close buffer" },
   ["h"] = { "<cmd>nohlsearch<cr>", "No highlight" },
   ["r"] = { ":%s/", "Replace" },
-  [";"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
+  [";"] = { "<cmd>Alpha<cr>", "Alpha" },
   b = {
     name = "Buffer",
     W = { "<cmd>noautocmd w<cr>", "Write without formatting" },
@@ -141,7 +141,6 @@ local mappings = {
     u = { "<cmd>lua require'dap'.step_out()<cr>", "Step out" },
     p = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
     r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle REPL" },
-    s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
     q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
     U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
   },
@@ -149,7 +148,7 @@ local mappings = {
     name = "Plugin",
     i = { "<cmd>Lazy install<cr>", "Install" },
     s = { "<cmd>Lazy sync<cr>", "Sync" },
-    S = { "<cmd>Lazy clear<cr>", "Status" },
+    S = { "<cmd>Lazy clear<cr>", "Clear" },
     c = { "<cmd>Lazy clean<cr>", "Clean" },
     u = { "<cmd>Lazy update<cr>", "Update" },
     p = { "<cmd>Lazy profile<cr>", "Profile" },
@@ -159,10 +158,7 @@ local mappings = {
   f = {
     name = "Find",
     f = { "<cmd>Telescope find_files<cr>", "Files" },
-    c = {
-      "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
-      "Colorscheme",
-    },
+    c = { "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>", "Colorscheme" },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
     p = { "<cmd>Telescope projects<cr>", "Projects" },
     h = { "<cmd>Telescope help_tags<cr>", "Help" },
@@ -173,12 +169,9 @@ local mappings = {
   g = {
     name = "Git",
     o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-    C = {
-      "<cmd>Telescope git_bcommits<cr>",
-      "Checkout commit (for current file)",
-    },
+    b = { "<cmd>Telescope git_branches<cr>", "Checkout branches" },
+    c = { "<cmd>Telescope git_commits<cr>", "Checkout commits" },
+    C = { "<cmd>Telescope git_bcommits<cr>", "Checkout buffer commits" },
     j = { "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>", "Next hunk" },
     k = { "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>", "Prev hunk" },
     l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -186,22 +179,16 @@ local mappings = {
     r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset hunk" },
     R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset buffer" },
     s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage hunk" },
-    u = {
-      "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-      "Undo stage hunk",
-    },
-    d = {
-      "<cmd>Gitsigns diffthis HEAD<cr>",
-      "Git diff",
-    },
+    u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo stage hunk" },
+    d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Git diff" },
   },
   l = {
     name = "LSP",
+    w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
+    b = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer diagnostics" },
+    e = { "<cmd>Telescope quickfix<cr>", "Quick fix" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>Mason<cr>", "Mason" },
-    b = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer diagnostics" },
-    w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
-    e = { "<cmd>Telescope quickfix<cr>", "Quick fix" },
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code action" },
     f = { "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", "Format" },
     j = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next diagnostic" },
@@ -221,6 +208,12 @@ local mappings = {
   m = {
     name = "Markdown",
     t = { "<cmd>MkdnToggleToDo<cr>", "Toggle to-do" },
+    l = { "<cmd>MkdnNextLink<cr>", "Next link" },
+    L = { "<cmd>MkdnPrevLink<cr>", "Prev link" },
+    h = { "<cmd>MkdnNextHeading<cr>", "Next heading" },
+    H = { "<cmd>MkdnPrevHeading<cr>", "Prev heading" },
+    f = { "<cmd>MkdnFoldSection<cr>", "Fold" },
+    F = { "<cmd>MkdnUnfoldSection<cr>", "Unfold" },
   }
 }
 
