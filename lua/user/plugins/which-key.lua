@@ -60,7 +60,7 @@ local setup = {
     spacing = 3, -- spacing between columns
     align = "left", -- align columns left, center or right
   },
-  ignore_missing = false, -- enable this to hide mappings for which you didn't specify a label
+  ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
   hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
   show_help = true, -- show help message on the command line when the popup is visible
   show_keys = true, -- show the currently pressed key and its label as a message in the command line
@@ -101,36 +101,33 @@ local vopts = {
 -- NOTE: Prefer using : over <cmd> as the latter avoids going back in normal-mode.
 -- see https://neovim.io/doc/user/map.html#:map-cmd
 local vmappings = {
-  ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle linewise (visual)" },
+  ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment" },
   ["t"] = { "<cmd>MkdnToggleToDo<cr>", "Toggle to-do" },
 }
 
 local mappings = {
-  [";"] = { "<cmd>Alpha<CR>", "Dashboard" },
-  ["w"] = { "<cmd>w!<CR>", "Save" },
+  [";"] = { "<cmd>Alpha<CR>", "Alpha" },
+  ["w"] = { "<cmd>w!<CR>", "Write" },
+  ["W"] = { "<cmd>noautocmd w<cr>", "Write without formatting" },
   ["q"] = { "<cmd>confirm q<CR>", "Quit" },
-  ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
-  ["c"] = { function(bufnr) BUF_KILL("bd", bufnr, false) end, "Close Buffer" },
-  ["f"] = { "<cmd>Telescope find_files<CR>", "Find Files" },
+  ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
+  ["c"] = { function(bufnr) BUF_KILL("bd", bufnr, false) end, "Close Buffer" },
+  ["f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
   ["t"] = { "<cmd>MkdnToggleToDo<cr>", "Toggle to-do" },
   b = {
-    name = "Buffers",
-    j = { "<cmd>BufferLinePick<cr>", "Jump" },
-    f = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
-    b = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
-    n = { "<cmd>BufferLineCycleNext<cr>", "Next" },
-    W = { "<cmd>noautocmd w<cr>", "Save without formatting (noautocmd)" },
-    e = {
-      "<cmd>BufferLinePickClose<cr>",
-      "Pick which buffer to close",
-    },
+    name = "Buffer",
+    b = { "<cmd>BufferLineMovePrev<cr>", "Move Previous" },
+    n = { "<cmd>BufferLineMoveNext<cr>", "Move Next" },
+    p = { "<cmd>BufferLinePick<cr>", "Pick" },
+    c = { "<cmd>BufferLinePickClose<cr>", "Pick Close" },
     h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
     l = {
       "<cmd>BufferLineCloseRight<cr>",
       "Close all to the right",
     },
+    f = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
     D = {
       "<cmd>BufferLineSortByDirectory<cr>",
       "Sort by directory",
@@ -158,7 +155,7 @@ local mappings = {
     U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
   },
   p = {
-    name = "plugins",
+    name = "Plugin",
     i = { "<cmd>Lazy install<cr>", "Install" },
     s = { "<cmd>Lazy sync<cr>", "Sync" },
     S = { "<cmd>Lazy clear<cr>", "Status" },
@@ -168,9 +165,31 @@ local mappings = {
     l = { "<cmd>Lazy log<cr>", "Log" },
     d = { "<cmd>Lazy debug<cr>", "Debug" },
   },
+  s = {
+    name = "Search",
+    c = {
+      "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
+      "Colorscheme",
+    },
+    p = { "<cmd>Telescope projects<cr>", "Projects" },
+    h = { "<cmd>Telescope help_tags<cr>", "Help" },
+    H = { "<cmd>Telescope highlights<cr>", "Highlights" },
+    r = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
+    t = { "<cmd>Telescope live_grep<cr>", "Text" },
+    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+    C = { "<cmd>Telescope commands<cr>", "Commands" },
+    l = { "<cmd>Telescope resume<cr>", "Resume" },
+  },
   g = {
     name = "Git",
     g = { "<cmd>term lazygit<cr>", "Lazygit" },
+    o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
+    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+    c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
+    C = {
+      "<cmd>Telescope git_bcommits<cr>",
+      "Checkout commit (for current file)",
+    },
     j = { "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>", "Next Hunk" },
     k = { "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>", "Prev Hunk" },
     l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -182,13 +201,6 @@ local mappings = {
       "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
       "Undo Stage Hunk",
     },
-    o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-    C = {
-      "<cmd>Telescope git_bcommits<cr>",
-      "Checkout commit(for current file)",
-    },
     d = {
       "<cmd>Gitsigns diffthis HEAD<cr>",
       "Git Diff",
@@ -196,12 +208,13 @@ local mappings = {
   },
   l = {
     name = "LSP",
-    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-    d = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
-    w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
-    f = { "<cmd>lua require('lvim.lsp.utils').format()<cr>", "Format" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>Mason<cr>", "Mason Info" },
+    b = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
+    w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
+    e = { "<cmd>Telescope quickfix<cr>", "Quickfix" },
+    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+    f = { "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", "Format" },
     j = {
       "<cmd>lua vim.diagnostic.goto_next()<cr>",
       "Next Diagnostic",
@@ -211,37 +224,10 @@ local mappings = {
       "Prev Diagnostic",
     },
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-    q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-    s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-    S = {
-      "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-      "Workspace Symbols",
-    },
-    e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
-  },
-  s = {
-    name = "Search",
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = {
-      "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
-      "Colorscheme with Preview",
-    },
-    f = { "<cmd>Telescope find_files<cr>", "Find File" },
-    p = { "<cmd>Telescope projects<cr>", "Find projects" },
-    h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-    H = { "<cmd>Telescope highlights<cr>", "Find highlight groups" },
-    M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-    R = { "<cmd>Telescope registers<cr>", "Registers" },
-    t = { "<cmd>Telescope live_grep<cr>", "Text" },
-    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-    C = { "<cmd>Telescope commands<cr>", "Commands" },
-    l = { "<cmd>Telescope resume<cr>", "Resume last search" },
-  },
-  T = {
-    name = "Treesitter",
-    i = { ":TSConfigInfo<cr>", "Info" },
+    d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
+    D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration" },
+    o = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Open Float" }
   },
 }
 

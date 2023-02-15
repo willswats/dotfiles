@@ -42,11 +42,10 @@ local plugins = {
     event = "BufReadPre", -- Fix blue cursor
   }, -- Show indent line
   "RRethy/vim-illuminate", -- Illuminate text
+  "jakewvincent/mkdnflow.nvim", -- Markdown editing
   "mfussenegger/nvim-dap", -- Debug
   "rcarriga/nvim-dap-ui", -- Debug UI
   "catppuccin/nvim", -- Colorscheme
-
-  "jakewvincent/mkdnflow.nvim", -- Markdown editing
 
   -- LSP
   {
