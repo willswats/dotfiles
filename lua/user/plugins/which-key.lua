@@ -81,8 +81,11 @@ local setup = {
   },
 }
 
--- Used throughout mappings
-local tree_close = "<cmd>NvimTreeClose<cr>"
+-- Commands frequently used in combination with others
+local combine_commands = {
+  tree_close = "<cmd>NvimTreeClose<cr>",
+  lsp_format_async_false = "<cmd>lua vim.lsp.buf.format{ async = false }<cr>"
+}
 
 local opts = {
   mode = "n", -- NORMAL mode
@@ -112,9 +115,9 @@ local vmappings = {
 }
 
 local mappings = {
-  ["w"] = { "<cmd>w!<cr>", "Write format" },
-  ["W"] = { "<cmd>noautocmd w<cr>", "Write" },
-  ["q"] = { tree_close .. "<cmd>confirm q<cr>", "Quit" },
+  ["w"] = { combine_commands.lsp_format_async_false .. "<cmd>w<cr>", "Write format" },
+  ["W"] = { "<cmd>w<cr>", "Write" },
+  ["q"] = { combine_commands.tree_close .. "<cmd>confirm q<cr>", "Quit" },
   ["c"] = { function(bufnr) BUF_KILL("bd", bufnr, false) end, "Close buffer" },
   ["h"] = { "<cmd>nohlsearch<cr>", "No highlight" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
@@ -192,7 +195,7 @@ local mappings = {
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>Mason<cr>", "Mason" },
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code action" },
-    f = { "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", "Format" },
+    f = { "<cmd>lua vim.lsp.buf.format{ async = false }<cr>", "Format" },
     j = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next diagnostic" },
     k = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev diagnostic" },
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens action" },
@@ -203,9 +206,9 @@ local mappings = {
   },
   t = {
     name = "Terminal",
-    f = { tree_close .. "<cmd>term fish<cr>", "Fish" },
-    b = { tree_close .. "<cmd>term bash<cr>", "Bash" },
-    g = { tree_close .. "<cmd>term lazygit<cr>", "Lazygit" }
+    f = { combine_commands.tree_close .. "<cmd>term fish<cr>", "Fish" },
+    b = { combine_commands.tree_close .. "<cmd>term bash<cr>", "Bash" },
+    g = { combine_commands.tree_close .. "<cmd>term lazygit<cr>", "Lazygit" }
   },
   m = {
     name = "Markdown",

@@ -1,27 +1,28 @@
-vim.cmd [[
-  augroup general
-    autocmd!
-    autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>
-  augroup end
+vim.api.nvim_create_autocmd({ "TermOpen" }, {
+  callback = function()
+    vim.cmd [[
+      setlocal nonumber
+      normal a
+    ]]
+  end,
+})
 
-  augroup terminal
-    autocmd!
-    autocmd TermOpen * setlocal nonumber
-    autocmd TermOpen * normal a
-  augroup END
+vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+  callback = function()
+    vim.highlight.on_yank { higroup = "Visual", timeout = 200 }
+  end,
+})
 
-  augroup lsp
-    autocmd!
-    autocmd BufWritePre * lua vim.lsp.buf.formatting()
-  augroup end
+vim.api.nvim_create_autocmd("User", {
+  pattern = "AlphaReady",
+  callback = function()
+    vim.opt.showtabline = 0
+  end,
+})
 
-  augroup alpha
-    autocmd!
-    autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
-  augroup end
-
-  augroup illuminate
-    autocmd!
-    autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200})
-  augroup end
-]]
+vim.api.nvim_create_autocmd("BufUnload", {
+  buffer = 0,
+  callback = function()
+    vim.opt.showtabline = 2
+  end,
+})
