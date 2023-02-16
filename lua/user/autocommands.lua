@@ -1,3 +1,18 @@
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = {
+    "qf",
+    "help",
+    "man",
+    "lspinfo",
+    "lsp-installer",
+    "null-ls-info",
+  },
+  callback = function()
+    vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = true })
+    vim.opt_local.buflisted = false
+  end,
+})
+
 vim.api.nvim_create_autocmd({ "TermOpen" }, {
   callback = function()
     vim.cmd [[
