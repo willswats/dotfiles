@@ -115,7 +115,7 @@ local vmappings = {
 }
 
 local mappings = {
-  ["w"] = { combine_commands.lsp_format_async_false .. "<cmd>w<cr>", "Write format" },
+  ["w"] = { combine_commands.lsp_format_async_false .. "<cmd>w!<cr>", "Write format" },
   ["W"] = { "<cmd>w<cr>", "Write" },
   ["q"] = { combine_commands.tree_close .. "<cmd>confirm q<cr>", "Quit" },
   ["c"] = { function(bufnr) BUF_KILL("bd", bufnr, false) end, "Close buffer" },
