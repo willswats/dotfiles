@@ -15,10 +15,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 vim.api.nvim_create_autocmd({ "TermOpen" }, {
   callback = function()
-    vim.cmd [[
-      setlocal nonumber
-      normal a
-    ]]
+    vim.opt_local.number = false
+    vim.api.nvim_input("a")
   end,
 })
 
