@@ -45,6 +45,7 @@ local plugins = {
   "jakewvincent/mkdnflow.nvim", -- Markdown editing
   "mfussenegger/nvim-dap", -- Debug
   "rcarriga/nvim-dap-ui", -- Debug UI
+  "ravenxrz/DAPInstall.nvim", -- Debug configuration
   "catppuccin/nvim", -- Colorscheme
 
   -- LSP

@@ -18,12 +18,11 @@ if not status_ok_icons then
   return
 end
 
-dap_install.setup {}
+dap_install.setup()
 
-dap_install.config("python", {})
--- add other configs here
+dap_install.config("chrome", {})
 
-dapui.setup {
+dapui.setup({
   expand_lines = true,
   icons = {
     expanded = icons.ui.TriangleShortArrowDown,
@@ -67,10 +66,14 @@ dapui.setup {
       close = { "q", "<Esc>" },
     },
   },
-}
+})
 
-vim.fn.sign_define("DapBreakpoint",
-  { text = icons.diagnostics.Debug, texthl = "DiagnosticSignError", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpoint", {
+  text = icons.diagnostics.Debug,
+  texthl = "DiagnosticSignError",
+  linehl = "",
+  numhl = ""
+})
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
   dapui.open()

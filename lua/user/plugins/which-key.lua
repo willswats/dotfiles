@@ -193,7 +193,7 @@ local mappings = {
     b = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer diagnostics" },
     e = { "<cmd>Telescope quickfix<cr>", "Quick fix" },
     i = { "<cmd>LspInfo<cr>", "Info" },
-    I = { "<cmd>Mason<cr>", "Mason" },
+    m = { "<cmd>Mason<cr>", "Mason" },
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code action" },
     f = { "<cmd>lua vim.lsp.buf.format{ async = false }<cr>", "Format" },
     j = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next diagnostic" },
