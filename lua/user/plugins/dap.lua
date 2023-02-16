@@ -25,7 +25,11 @@ dap_install.config("python", {})
 
 dapui.setup {
   expand_lines = true,
-  icons = { expanded = "", collapsed = "", circular = "" },
+  icons = {
+    expanded = icons.ui.TriangleShortArrowDown,
+    collapsed = icons.ui.TriangleShortArrowRight,
+    circular = ""
+  },
   mappings = {
     -- Use a table to apply multiple mappings
     expand = { "<CR>", "<2-LeftMouse>" },
