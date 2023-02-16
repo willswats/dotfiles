@@ -112,8 +112,8 @@ local vmappings = {
 }
 
 local mappings = {
-  ["w"] = { "<cmd>lua vim.lsp.buf.format{ async = false }<cr>" .. "<cmd>w<cr>", "Write format" },
-  ["W"] = { "<cmd>w<cr>", "Write" },
+  ["w"] = { "<cmd>w!<cr>", "Write format" },
+  ["W"] = { "<cmd>noautocmd w<cr>", "Write" },
   ["q"] = { tree_close .. "<cmd>confirm q<cr>", "Quit" },
   ["c"] = { function(bufnr) BUF_KILL("bd", bufnr, false) end, "Close buffer" },
   ["h"] = { "<cmd>nohlsearch<cr>", "No highlight" },
