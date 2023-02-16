@@ -81,7 +81,7 @@ local setup = {
   },
 }
 
--- Close the tree with certain commands
+-- Used throughout mappings
 local tree_close = "<cmd>NvimTreeClose<cr>"
 
 local opts = {
@@ -112,17 +112,16 @@ local vmappings = {
 }
 
 local mappings = {
-  ["w"] = { "<cmd>w!<cr>", "Write" },
+  ["w"] = { "<cmd>lua vim.lsp.buf.format{ async = false }<cr>" .. "<cmd>w!<cr>", "Write format" },
+  ["W"] = { "<cmd>w!<cr>", "Write" },
   ["q"] = { tree_close .. "<cmd>confirm q<cr>", "Quit" },
   ["c"] = { function(bufnr) BUF_KILL("bd", bufnr, false) end, "Close buffer" },
   ["h"] = { "<cmd>nohlsearch<cr>", "No highlight" },
-  ["r"] = { ":%s/", "Replace" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
   [";"] = { "<cmd>Alpha<cr>", "Alpha" },
   b = {
     name = "Buffer",
-    W = { "<cmd>noautocmd w<cr>", "Write without formatting" },
     p = { "<cmd>BufferLinePick<cr>", "Pick" },
     c = { "<cmd>BufferLinePickClose<cr>", "Pick close" },
     h = { "<cmd>BufferLineCloseLeft<cr>", "Close left" },
