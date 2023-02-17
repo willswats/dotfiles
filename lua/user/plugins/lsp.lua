@@ -18,6 +18,11 @@ if not status_ok_cmp_nvim_lsp then
   return
 end
 
+local status_ok_icons, icons = pcall(require, "user.icons")
+if not status_ok_icons then
+  return
+end
+
 mason.setup()
 mason_lspconfig.setup({
   ensure_installed = {
@@ -50,3 +55,15 @@ mason_lspconfig.setup_handlers({
     })
   end,
 })
+
+
+local signs = {
+  { name = "DiagnosticSignError", text = icons.diagnostics.BoldError },
+  { name = "DiagnosticSignWarn",  text = icons.diagnostics.BoldWarning },
+  { name = "DiagnosticSignHint",  text = icons.diagnostics.BoldHint },
+  { name = "DiagnosticSignInfo",  text = icons.diagnostics.BoldInformation },
+}
+
+for _, sign in ipairs(signs) do
+  vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+end
