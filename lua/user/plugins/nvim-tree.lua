@@ -15,7 +15,8 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
-nvim_tree.setup {
+nvim_tree.setup({
+  hijack_cursor = true,
   sync_root_with_cwd = true,
   update_focused_file = {
     enable = true,
@@ -70,4 +71,4 @@ nvim_tree.setup {
       },
     },
   },
-}
+})
