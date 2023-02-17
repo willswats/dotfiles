@@ -1,5 +1,6 @@
 # TODO
 
+- [ ] Simplify cmp config
 - [ ] Setup dap
 - [ ] Fix mkdnflow markdown checkbox toggling to X
 - [ ] Find a better way to deal with Markdownlint MD013
