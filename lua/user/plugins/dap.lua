@@ -8,19 +8,10 @@ if not status_ok_dapui then
   return
 end
 
-local status_ok_dap_install, dap_install = pcall(require, "dap-install")
-if not status_ok_dap_install then
-  return
-end
-
 local status_ok_icons, icons = pcall(require, "user.icons")
 if not status_ok_icons then
   return
 end
-
-dap_install.setup()
-
-dap_install.config("chrome", {})
 
 dapui.setup({
   expand_lines = true,
