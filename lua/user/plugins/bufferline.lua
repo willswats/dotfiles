@@ -15,7 +15,9 @@ bufferline.setup {
     close_command = function(bufnr) -- can be a string | function, see "Mouse actions"
       BUF_KILL("bd", bufnr, false)
     end,
-    right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
+    right_mouse_command = function(bufnr)
+      BUF_KILL("bd", bufnr, false)
+    end,
     left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
     middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
     indicator_icon = nil,
