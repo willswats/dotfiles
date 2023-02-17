@@ -11,7 +11,7 @@ end
 lsp.preset({
   name = 'minimal',
   set_lsp_keymaps = false,
-  manage_nvim_cmp = true,
+  manage_nvim_cmp = false,
   suggest_lsp_servers = false,
 })
 
@@ -27,19 +27,11 @@ lsp.ensure_installed({
 
 lsp.set_preferences({
   sign_icons = {
-    error = icons.diagnostics.Error,
-    warn = icons.diagnostics.Warning,
-    hint = icons.diagnostics.Hint,
-    info = icons.diagnostics.Information
+    error = icons.diagnostics.BoldError,
+    warn = icons.diagnostics.BoldWarning,
+    hint = icons.diagnostics.BoldHint,
+    info = icons.diagnostics.BoldInformation
   }
-})
-
--- Explicitly select completions
-lsp.setup_nvim_cmp({
-  preselect = 'none',
-  completion = {
-    completeopt = 'menu,menuone,noinsert,noselect'
-  },
 })
 
 -- configure lua language server for neovim
