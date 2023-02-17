@@ -84,7 +84,6 @@ local setup = {
 -- Commands frequently used in combination with others
 local combine_commands = {
   tree_close = "<cmd>NvimTreeClose<cr>",
-  lsp_format_async_false = "<cmd>lua vim.lsp.buf.format{ async = false }<cr>"
 }
 
 local opts = {
@@ -115,8 +114,8 @@ local vmappings = {
 }
 
 local mappings = {
-  ["w"] = { combine_commands.lsp_format_async_false .. "<cmd>w!<cr>", "Write format" },
-  ["W"] = { "<cmd>w<cr>", "Write" },
+  ["w"] = { "<cmd>w!<cr>", "Write format" },
+  ["W"] = { "<cmd>noautocmd w<cr>", "Write" },
   ["q"] = { combine_commands.tree_close .. "<cmd>confirm q<cr>", "Quit" },
   ["c"] = { function(bufnr) BUF_KILL("bd", bufnr, false) end, "Close buffer" },
   ["h"] = { "<cmd>nohlsearch<cr>", "No highlight" },
