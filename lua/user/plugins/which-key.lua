@@ -103,16 +103,9 @@ local vopts = {
   noremap = true, -- use `noremap` when creating keymaps
   nowait = true, -- use `nowait` when creating keymaps
 }
+
 -- NOTE: Prefer using : over <cmd> as the latter avoids going back in normal-mode.
 -- see https://neovim.io/doc/user/map.html#:map-cmd
-local vmappings = {
-  ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment" },
-  m = {
-    name = "Markdown",
-    t = { "<cmd>MkdnToggleToDo<cr>", "Toggle to-do" },
-  }
-}
-
 local mappings = {
   ["w"] = { "<cmd>w!<cr>", "Write format" },
   ["W"] = { "<cmd>noautocmd w<cr>", "Write" },
@@ -218,6 +211,14 @@ local mappings = {
     H = { "<cmd>MkdnPrevHeading<cr>", "Prev heading" },
     f = { "<cmd>MkdnFoldSection<cr>", "Fold" },
     F = { "<cmd>MkdnUnfoldSection<cr>", "Unfold" },
+  }
+}
+
+local vmappings = {
+  ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment" },
+  m = {
+    name = "Markdown",
+    t = { "<cmd>MkdnToggleToDo<cr>", "Toggle to-do" },
   }
 }
 
