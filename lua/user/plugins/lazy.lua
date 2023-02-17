@@ -43,8 +43,6 @@ local plugins = {
   }, -- Show indent line
   "RRethy/vim-illuminate", -- Illuminate text
   "jakewvincent/mkdnflow.nvim", -- Markdown editing
-  "mfussenegger/nvim-dap", -- Debug
-  "rcarriga/nvim-dap-ui", -- Debug UI
   "catppuccin/nvim", -- Colorscheme
 
   -- LSP

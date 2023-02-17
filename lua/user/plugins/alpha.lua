@@ -13,15 +13,6 @@ if not status_ok_icons then
   return
 end
 
-dashboard.section.header.val = {
-  [[                               __                ]],
-  [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
-  [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
-  [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
-  [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
-  [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
-}
-
 dashboard.section.buttons.val = {
   dashboard.button("f", icons.ui.FindFile .. "  " .. "Find File", ":Telescope find_files <CR>"),
   dashboard.button("n", icons.ui.NewFile .. "  " .. "New file", ":ene <BAR> startinsert <CR>"),
