@@ -42,6 +42,6 @@ local options = {
   sidescrolloff = 8,
 }
 
-for k, v in pairs(options) do
-  vim.opt[k] = v
+for key, value in pairs(options) do
+  vim.opt[key] = value
 end
