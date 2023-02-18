@@ -8,7 +8,7 @@ if not status_ok_icons then
   return
 end
 
-bufferline.setup {
+bufferline.setup({
   options = {
     mode = "buffers", -- set to "tabs" to only show tabpages instead
     numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
@@ -20,7 +20,6 @@ bufferline.setup {
     end,
     left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
     middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
-    indicator_icon = nil,
     indicator = { style = "icon", icon = icons.ui.LineLeft },
     buffer_close_icon = icons.ui.Close,
     modified_icon = icons.ui.Circle,
@@ -29,8 +28,9 @@ bufferline.setup {
     right_trunc_marker = icons.ui.ArrowCircleRight,
     max_name_length = 30,
     max_prefix_length = 30, -- prefix used when a buffer is de-duplicated
+    truncate_names = true, -- whether or not tab names should be truncated
     tab_size = 21,
-    diagnostics = "nvim_lsp", -- | "nvim_lsp" | "coc",
+    diagnostics = "nvim_lsp",
     diagnostics_update_in_insert = false,
     diagnostics_indicator = function(count, level)
       local icon = level:match("error") and icons.diagnostics.Error or icons.diagnostics.Warning
@@ -39,12 +39,20 @@ bufferline.setup {
     offsets = { { filetype = "NvimTree" } },
     show_buffer_icons = true,
     show_buffer_close_icons = true,
+    show_buffer_default_icon = true, -- whether or not an unrecognised filetype should show a default icon
     show_close_icon = true,
     show_tab_indicators = true,
+    show_duplicate_prefix = true, -- whether to show duplicate buffer prefix
     persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
     separator_style = "thin", -- | "thick" | "thin" | { 'any', 'any' },
     enforce_regular_tabs = true,
     always_show_bufferline = true,
+    hover = {
+      enabled = true,
+      delay = 200,
+      reveal = { 'close' }
+    },
+    sort_by = "insert_after_current", -- |'insert_at_end' | 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs'
   },
   highlights = {
     fill = {
@@ -124,7 +132,7 @@ bufferline.setup {
       bg = { attribute = "bg", highlight = "Normal" },
     },
   },
-}
+})
 
 -- Common kill function for bdelete and bwipeout
 -- credits: based on bbye and nvim-bufdel

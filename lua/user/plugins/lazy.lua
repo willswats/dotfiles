@@ -34,12 +34,11 @@ local plugins = {
   "lewis6991/gitsigns.nvim", -- Git signs
   "jose-elias-alvarez/null-ls.nvim", -- Format & Lint
   "numToStr/Comment.nvim", -- Comment
-  "JoosepAlviste/nvim-ts-context-commentstring", -- Comment
   "ahmedkhalf/project.nvim", -- Auto CD
   "windwp/nvim-autopairs", -- Auto pair
   {
     "lukas-reineke/indent-blankline.nvim",
-    event = "BufReadPre", -- Fix blue cursor
+    lazy = true
   }, -- Show indent line
   "RRethy/vim-illuminate", -- Illuminate text
   "jakewvincent/mkdnflow.nvim", -- Markdown editing

@@ -8,11 +8,6 @@ if not status_ok_luasnip then
   return
 end
 
-local status_ok_icons, icons = pcall(require, "user.icons")
-if not status_ok_icons then
-  return
-end
-
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
@@ -30,13 +25,11 @@ cmp.setup {
     ["<C-k>"] = cmp.mapping(cmp.mapping.scroll_docs( -1), { "i", "c" }),
     ["<C-j>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-    ["<C-e>"] = cmp.mapping {
+    ["<C-e>"] = cmp.mapping({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
-    },
-    -- Accept currently selected item. If none selected, `select` first item.
-    -- Set `select` to `false` to only confirm explicitly selected items.
-    ["<CR>"] = cmp.mapping.confirm { select = false },
+    }),
+    ["<CR>"] = cmp.mapping.confirm({ select = false }),
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -66,31 +59,12 @@ cmp.setup {
       "s",
     }),
   },
-  formatting = {
-    fields = { "kind", "abbr", "menu" },
-    format = function(entry, vim_item)
-      vim_item.kind = icons.kind[vim_item.kind]
-      vim_item.menu = ({
-            nvim_lsp = "",
-            nvim_lua = "",
-            luasnip = "",
-            buffer = "",
-            path = "",
-            emoji = "",
-          })[entry.source.name]
-      return vim_item
-    end,
-  },
   sources = {
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
-  },
-  confirm_opts = {
-    behavior = cmp.ConfirmBehavior.Replace,
-    select = false,
   },
   window = {
     completion = cmp.config.window.bordered(),

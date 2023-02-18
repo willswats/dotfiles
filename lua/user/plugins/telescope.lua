@@ -15,11 +15,9 @@ end
 
 telescope.setup {
   defaults = {
-
     prompt_prefix = icons.ui.Telescope .. " ",
     selection_caret = icons.ui.Forward .. " ",
     path_display = { "smart" },
-
     mappings = {
       i = {
         ["<C-n>"] = actions.cycle_history_next,

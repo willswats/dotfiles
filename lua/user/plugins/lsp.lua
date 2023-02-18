@@ -56,7 +56,6 @@ mason_lspconfig.setup_handlers({
   end,
 })
 
-
 local signs = {
   { name = "DiagnosticSignError", text = icons.diagnostics.BoldError },
   { name = "DiagnosticSignWarn",  text = icons.diagnostics.BoldWarning },

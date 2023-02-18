@@ -1,14 +1,18 @@
-local status_ok_npairs, npairs = pcall(require, "nvim-autopairs")
-if not status_ok_npairs then
+local status_ok_nvim_autopairs, nvim_autopairs = pcall(require, "nvim-autopairs")
+if not status_ok_nvim_autopairs then
   return
 end
 
-npairs.setup {
-  check_ts = true,
+local status_ok_cmp, cmp = pcall(require, "cmp")
+if not status_ok_cmp then
+  return
+end
+
+nvim_autopairs.setup({
+  check_ts = true, -- Treesitter
   ts_config = {
     lua = { "string", "source" },
     javascript = { "string", "template_string" },
-    java = false,
   },
   disable_filetype = { "TelescopePrompt", "spectre_panel" },
   fast_wrap = {
@@ -22,11 +26,9 @@ npairs.setup {
     highlight = "PmenuSel",
     highlight_grey = "LineNr",
   },
-}
+  enable_check_bracket_line = true
+})
 
 local cmp_autopairs = require "nvim-autopairs.completion.cmp"
-local cmp_status_ok, cmp = pcall(require, "cmp")
-if not cmp_status_ok then
-  return
-end
+
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
