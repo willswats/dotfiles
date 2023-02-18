@@ -38,7 +38,7 @@ bufferline.setup({
     end,
     offsets = { { filetype = "NvimTree" } },
     show_buffer_icons = true,
-    show_buffer_close_icons = true,
+    show_buffer_close_icons = false,
     show_buffer_default_icon = true, -- whether or not an unrecognised filetype should show a default icon
     show_close_icon = true,
     show_tab_indicators = true,
@@ -48,22 +48,16 @@ bufferline.setup({
     enforce_regular_tabs = true,
     always_show_bufferline = true,
     hover = {
-      enabled = true,
+      enabled = false,
       delay = 200,
       reveal = { 'close' }
     },
-    sort_by = "insert_after_current", -- |'insert_at_end' | 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs'
   },
   highlights = {
     fill = {
       fg = { attribute = "fg", highlight = "#ff0000" },
       bg = { attribute = "bg", highlight = "TabLine" },
     },
-    background = {
-      fg = { attribute = "fg", highlight = "TabLine" },
-      bg = { attribute = "bg", highlight = "TabLine" },
-    },
-
     buffer_visible = {
       fg = { attribute = "fg", highlight = "TabLine" },
       bg = { attribute = "bg", highlight = "TabLine" },
