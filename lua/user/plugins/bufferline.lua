@@ -8,6 +8,18 @@ if not status_ok_icons then
   return
 end
 
+local function diagnostics_indicator(count, level)
+  local icon = ""
+  if level:match("error") then
+    icon = icons.diagnostics.Error
+  elseif level:match("warning") then
+    icon = icons.diagnostics.Warning
+  elseif level:match("hint") then
+    icon = icons.diagnostics.Hint
+  end
+  return " " .. icon .. " " .. count
+end
+
 bufferline.setup({
   options = {
     mode = "buffers", -- set to "tabs" to only show tabpages instead
@@ -15,15 +27,13 @@ bufferline.setup({
     close_command = function(bufnr) -- can be a string | function, see "Mouse actions"
       BUF_KILL("bd", bufnr, false)
     end,
-    right_mouse_command = function(bufnr)
-      BUF_KILL("bd", bufnr, false)
-    end,
+    right_mouse_command = "vert sbuffer %d", -- can be a string | function, see "Mouse actions"
     left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
     middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
-    indicator = { style = "icon", icon = icons.ui.LineLeft },
+    indicator = { style = "icon", icon = icons.ui.BoldLineLeft },
     buffer_close_icon = icons.ui.Close,
     modified_icon = icons.ui.Circle,
-    close_icon = icons.ui.close,
+    close_icon = icons.ui.BoldClose,
     left_trunc_marker = icons.ui.ArrowCircleLeft,
     right_trunc_marker = icons.ui.ArrowCircleRight,
     max_name_length = 30,
@@ -32,26 +42,24 @@ bufferline.setup({
     tab_size = 21,
     diagnostics = "nvim_lsp",
     diagnostics_update_in_insert = false,
-    diagnostics_indicator = function(count, level)
-      local icon = level:match("error") and icons.diagnostics.Error or icons.diagnostics.Warning
-      return " " .. icon .. " " .. count
-    end,
+    diagnostics_indicator = diagnostics_indicator,
     offsets = { { filetype = "NvimTree" } },
     show_buffer_icons = true,
-    show_buffer_close_icons = false,
+    show_buffer_close_icons = true,
     show_buffer_default_icon = true, -- whether or not an unrecognised filetype should show a default icon
-    show_close_icon = true,
+    show_close_icon = false,
     show_tab_indicators = true,
     show_duplicate_prefix = true, -- whether to show duplicate buffer prefix
     persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
     separator_style = "thin", -- | "thick" | "thin" | { 'any', 'any' },
-    enforce_regular_tabs = true,
+    enforce_regular_tabs = false,
     always_show_bufferline = true,
     hover = {
       enabled = false,
       delay = 200,
       reveal = { 'close' }
     },
+    sort_by = "id",
   },
   highlights = {
     fill = {

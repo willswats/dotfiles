@@ -3,17 +3,10 @@ if not status_ok_nvim_tree then
   return
 end
 
-local status_ok_nvim_tree_config, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not status_ok_nvim_tree_config then
-  return
-end
-
 local status_ok_icons, icons = pcall(require, "user.icons")
 if not status_ok_icons then
   return
 end
-
-local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup({
   hijack_cursor = true,
@@ -65,9 +58,9 @@ nvim_tree.setup({
     side = "left",
     mappings = {
       list = {
-        { key = { "l", "<CR>" }, cb = tree_cb "edit" },
-        { key = "h",             cb = tree_cb "close_node" },
-      },
+        { key = { "l", "<CR>", "o" }, action = "edit",      mode = "n" },
+        { key = "h",                  action = "close_node" },
+        { key = "v",                  action = "vsplit" }, },
     },
-  },
+  }
 })

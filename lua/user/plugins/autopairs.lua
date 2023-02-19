@@ -8,13 +8,12 @@ if not status_ok_cmp then
   return
 end
 
-local status_ok_cmp_autopairs, cmp_autopairs = pcall(require "nvim-autopairs.completion.cmp")
+local status_ok_cmp_autopairs, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
 if not status_ok_cmp_autopairs then
   return
 end
 
 nvim_autopairs.setup({
-  ---@usage  modifies the function or method delimiter by filetypes
   map_char = {
     all = "(",
     tex = "{",
@@ -55,8 +54,4 @@ nvim_autopairs.setup({
   },
 })
 
--- If you want insert `(` after select function or method item
-cmp.event:on(
-  "confirm_done",
-  cmp_autopairs.on_confirm_done()
-)
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())

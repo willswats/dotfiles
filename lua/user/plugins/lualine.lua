@@ -8,10 +8,6 @@ if not status_ok_icons then
   return
 end
 
-local spaces = function()
-  return icons.ui.Tab .. " " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
-end
-
 lualine.setup({
   options = {
     icons_enabled = true,
@@ -23,11 +19,11 @@ lualine.setup({
   },
   sections = {
     lualine_a = { "mode" },
-    lualine_b = { "branch", "diff" },
+    lualine_b = { "branch", "diff", "diagnostics" },
     lualine_c = {},
-    lualine_x = { spaces, "filetype" },
+    lualine_x = { "filetype" },
     lualine_y = { "progress" },
-    lualine_z = { 'location' }
+    lualine_z = { "location" }
   },
   inactive_sections = {
     lualine_a = {},
