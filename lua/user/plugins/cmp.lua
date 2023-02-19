@@ -8,13 +8,23 @@ if not status_ok_luasnip then
   return
 end
 
-require("luasnip/loaders/from_vscode").lazy_load()
+local status_ok_luasnip_loaders, luasnip_loaders = pcall(require, "luasnip/loaders/from_vscode")
+if not status_ok_luasnip_loaders then
+  return
+end
+
+local status_ok_icons, icons = pcall(require, "user.icons")
+if not status_ok_icons then
+  return
+end
 
 local has_words_before = function()
   unpack = unpack or table.unpack
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
+
+luasnip_loaders.lazy_load()
 
 cmp.setup {
   snippet = {
@@ -53,6 +63,13 @@ cmp.setup {
       end
     end, { "i", "s" }),
   }),
+  formatting = {
+    fields = { "abbr", "kind" },
+    format = function(_, vim_item)
+      vim_item.kind = (icons.kind[vim_item.kind] or "") .. " " .. vim_item.kind
+      return vim_item
+    end,
+  },
   sources = {
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
