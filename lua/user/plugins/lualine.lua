@@ -8,6 +8,11 @@ if not status_ok_icons then
   return
 end
 
+local branch = {
+  "branch",
+  icon = icons.git.Branch
+}
+
 local diagnostics = {
   "diagnostics",
   symbols = {
@@ -26,9 +31,12 @@ local diff = {
   },
 }
 
-local spaces = function()
-  return icons.ui.Tab .. " " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
-end
+local spaces = {
+  function()
+    local shiftwidth = vim.api.nvim_buf_get_option(0, "shiftwidth")
+    return icons.ui.Tab .. " " .. shiftwidth
+  end,
+}
 
 lualine.setup({
   options = {
@@ -41,7 +49,7 @@ lualine.setup({
   },
   sections = {
     lualine_a = { "mode" },
-    lualine_b = { "branch", diff, diagnostics },
+    lualine_b = { branch, diff, diagnostics },
     lualine_c = {},
     lualine_x = { spaces, "filetype" },
     lualine_y = { "progress" },
