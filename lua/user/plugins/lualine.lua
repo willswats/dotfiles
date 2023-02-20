@@ -8,6 +8,28 @@ if not status_ok_icons then
   return
 end
 
+local diagnostics = {
+  "diagnostics",
+  symbols = {
+    error = icons.diagnostics.Error .. " ",
+    warn = icons.diagnostics.Warning .. " ",
+    hint = icons.diagnostics.Hint .. " "
+  },
+}
+
+local diff = {
+  "diff",
+  symbols = {
+    added = icons.git.LineAdded .. " ",
+    modified = icons.git.LineModified .. " ",
+    removed = icons.git.LineRemoved .. " "
+  },
+}
+
+local spaces = function()
+  return icons.ui.Tab .. " " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+end
+
 lualine.setup({
   options = {
     icons_enabled = true,
@@ -19,9 +41,9 @@ lualine.setup({
   },
   sections = {
     lualine_a = { "mode" },
-    lualine_b = { "branch", "diff", "diagnostics" },
+    lualine_b = { "branch", diff, diagnostics },
     lualine_c = {},
-    lualine_x = { "filetype" },
+    lualine_x = { spaces, "filetype" },
     lualine_y = { "progress" },
     lualine_z = { "location" }
   },
