@@ -15,7 +15,7 @@ end
 
 dashboard.section.buttons.val = {
   dashboard.button("n", icons.ui.NewFile .. "  " .. "New file", ":ene <BAR> startinsert<cr>"),
-  dashboard.button("r", icons.ui.Files .. "  " .. "Recent files", ":Telescope oldfiles<cr>"),
+  dashboard.button("o", icons.ui.Files .. "  " .. "Old files", ":Telescope oldfiles<cr>"),
   dashboard.button("p", icons.ui.Project .. "  " .. "Projects", ":Telescope projects<cr>"),
   dashboard.button("s", icons.ui.Package .. "  " .. "Sync plugins", ":Lazy sync<cr>"),
   dashboard.button("c", icons.ui.Gear .. "  " .. "Configuration", ":e $MYVIMRC<cr>"),
