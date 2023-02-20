@@ -31,13 +31,6 @@ local diff = {
   },
 }
 
-local spaces = {
-  function()
-    local shiftwidth = vim.api.nvim_buf_get_option(0, "shiftwidth")
-    return icons.ui.Tab .. " " .. shiftwidth
-  end,
-}
-
 lualine.setup({
   options = {
     icons_enabled = true,
@@ -51,7 +44,7 @@ lualine.setup({
     lualine_a = { "mode" },
     lualine_b = { branch, diff, diagnostics },
     lualine_c = {},
-    lualine_x = { spaces, "filetype" },
+    lualine_x = { "filetype" },
     lualine_y = { "progress" },
     lualine_z = { "location" }
   },
