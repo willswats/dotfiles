@@ -3,6 +3,7 @@
 - [ ] Setup omnisharp and omnisharp_mono for use together
 - [ ] Fix cmp deleting word when words are together
 - [ ] Add toggleterm
+- [ ] Fix indent line (4 spaces)
 
 - [ ] Setup dap
 - [ ] Fix mkdnflow markdown checkbox toggling to X
