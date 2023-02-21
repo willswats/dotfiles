@@ -81,11 +81,6 @@ local setup = {
   },
 }
 
--- Commands frequently used in combination with others
-local combine_commands = {
-  tree_close = "<cmd>NvimTreeClose<cr>",
-}
-
 local opts = {
   mode = "n", -- NORMAL mode
   prefix = "<leader>",
@@ -109,7 +104,7 @@ local vopts = {
 local mappings = {
   ["w"] = { "<cmd>w!<cr>", "Write format" },
   ["W"] = { "<cmd>noautocmd w<cr>", "Write" },
-  ["q"] = { combine_commands.tree_close .. "<cmd>confirm q<cr>", "Quit" },
+  ["q"] = { "<cmd>confirm q<cr>", "Quit" },
   ["c"] = { function(bufnr) BUF_KILL("bd", bufnr, false) end, "Close buffer" },
   ["h"] = { "<cmd>nohlsearch<cr>", "No highlight" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
@@ -196,9 +191,9 @@ local mappings = {
   },
   t = {
     name = "Terminal",
-    f = { combine_commands.tree_close .. "<cmd>term fish<cr>", "Fish" },
-    b = { combine_commands.tree_close .. "<cmd>term bash<cr>", "Bash" },
-    g = { combine_commands.tree_close .. "<cmd>term lazygit<cr>", "Lazygit" }
+    f = { "<cmd>term fish<cr>", "Fish" },
+    b = { "<cmd>term bash<cr>", "Bash" },
+    g = { "<cmd>term lazygit<cr>", "Lazygit" }
   },
   m = {
     name = "Markdown",
