@@ -14,14 +14,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
--- Set terminal options
-vim.api.nvim_create_autocmd({ "TermOpen" }, {
-  callback = function()
-    vim.opt_local.number = false
-    vim.api.nvim_input("a")
-  end,
-})
-
 -- Show highlight on yank
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   callback = function()

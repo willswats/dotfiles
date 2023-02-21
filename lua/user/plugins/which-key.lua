@@ -191,8 +191,10 @@ local mappings = {
   },
   t = {
     name = "Terminal",
-    f = { "<cmd>term fish<cr>", "Fish" },
-    b = { "<cmd>term bash<cr>", "Bash" },
+    ["1"] = { "<cmd>ToggleTerm 1<cr>", "Toggle 1" },
+    ["2"] = { "<cmd>ToggleTerm 2<cr>", "Toggle 2" },
+    ["3"] = { "<cmd>ToggleTerm 3<cr>", "Toggle 3" },
+    ["4"] = { "<cmd>ToggleTerm 4<cr>", "Toggle 4" },
     g = { function() LAZYGIT_TOGGLE() end, "Lazygit" }
   },
   m = {
