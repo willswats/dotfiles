@@ -28,6 +28,19 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   end,
 })
 
+-- Open nvim-tree for directories
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+  callback = function(data)
+    local directory = vim.fn.isdirectory(data.file) == 1
+
+    if not directory then
+      return
+    end
+
+    require("nvim-tree.api").tree.open()
+  end
+})
+
 -- Hide tabline when alpha is active
 vim.api.nvim_create_autocmd({ "User" }, {
   pattern = "AlphaReady",
