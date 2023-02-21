@@ -31,6 +31,7 @@ local plugins = {
   { "nvim-lualine/lualine.nvim" }, -- Statusline
   { "goolord/alpha-nvim" }, -- Dashboard
   { "nvim-telescope/telescope.nvim" }, -- Telescope
+  { "akinsho/toggleterm.nvim" }, -- Toggleterm
   { "folke/which-key.nvim" }, -- Which key
   {
     "folke/noice.nvim", -- Replaces UI

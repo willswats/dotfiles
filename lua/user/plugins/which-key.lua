@@ -193,7 +193,7 @@ local mappings = {
     name = "Terminal",
     f = { "<cmd>term fish<cr>", "Fish" },
     b = { "<cmd>term bash<cr>", "Bash" },
-    g = { "<cmd>term lazygit<cr>", "Lazygit" }
+    g = { function() LAZYGIT_TOGGLE() end, "Lazygit" }
   },
   m = {
     name = "Markdown",
