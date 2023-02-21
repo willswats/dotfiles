@@ -1,6 +1,5 @@
 # TODO
 
-- [ ] Add toggleterm
 - [ ] Setup omnisharp and omnisharp_mono for use together
 - [ ] Fix cmp deleting word when words are together
 - [ ] Fix indent line (4 spaces)
