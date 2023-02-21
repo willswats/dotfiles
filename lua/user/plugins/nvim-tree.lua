@@ -40,10 +40,10 @@ nvim_tree.setup({
     mappings = {
       custom_only = false,
       list = {
-        { key = { "l", "<CR>", "o" }, action = "edit",      mode = "n" },
-        { key = "h",                  action = "close_node" },
-        { key = "v",                  action = "vsplit" },
-        { key = "C",                  action = "cd" },
+        { key = "l",    action = "edit", },
+        { key = "h",    action = "close_node" },
+        { key = "v",    action = "vsplit" },
+        { key = "<CR>", action = "cd" },
       },
     },
     float = {
@@ -179,7 +179,7 @@ nvim_tree.setup({
     use_system_clipboard = true,
     change_dir = {
       enable = true,
-      global = false,
+      global = true,
       restrict_above_cwd = false,
     },
     expand_all = {
