@@ -14,10 +14,12 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
--- Set terminal options
-vim.api.nvim_create_autocmd({ "TermOpen" }, {
+-- Set markdown and gitcommit opts
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "markdown", "gitcommit" },
   callback = function()
-    vim.opt_local.number = false
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
   end,
 })
 
@@ -33,32 +35,4 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   callback = function()
     vim.lsp.buf.format({ async = false })
   end,
-})
-
--- Hide tabline when Alpha is active
-vim.api.nvim_create_autocmd({ "User" }, {
-  pattern = "AlphaReady",
-  callback = function()
-    vim.opt.showtabline = 0
-  end,
-})
-
--- Display tabline when Alpha is not active
-vim.api.nvim_create_autocmd({ "BufUnload" }, {
-  buffer = 0,
-  callback = function()
-    vim.opt.showtabline = 2
-  end,
-})
-
--- Auto quit NvimTree
-vim.api.nvim_create_autocmd("BufEnter", {
-  group = vim.api.nvim_create_augroup("NvimTreeClose", { clear = true }),
-  pattern = "NvimTree_*",
-  callback = function()
-    local layout = vim.api.nvim_call_function("winlayout", {})
-    if layout[1] == "leaf" and vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(layout[2]), "filetype") == "NvimTree" and layout[3] == nil then
-      vim.cmd("confirm quit")
-    end
-  end
 })
