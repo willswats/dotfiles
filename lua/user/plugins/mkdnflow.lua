@@ -47,7 +47,7 @@ mkdnflow.setup({
     end
   },
   to_do = {
-    symbols = { ' ', 'x' },
+    symbols = { ' ', 'x', ' ' },
     update_parents = true,
     not_started = ' ',
     in_progress = ' ',
