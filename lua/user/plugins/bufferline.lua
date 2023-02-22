@@ -36,10 +36,10 @@ bufferline.setup({
     close_icon = icons.ui.BoldClose,
     left_trunc_marker = icons.ui.ArrowCircleLeft,
     right_trunc_marker = icons.ui.ArrowCircleRight,
-    max_name_length = 30,
-    max_prefix_length = 30, -- prefix used when a buffer is de-duplicated
+    max_name_length = 18,
+    max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
     truncate_names = true, -- whether or not tab names should be truncated
-    tab_size = 21,
+    tab_size = 18,
     diagnostics = "nvim_lsp",
     diagnostics_update_in_insert = false,
     diagnostics_indicator = diagnostics_indicator,
