@@ -195,6 +195,18 @@ local mappings = {
     ["2"] = { "<cmd>ToggleTerm 2<cr>", "Toggle 2" },
     ["3"] = { "<cmd>ToggleTerm 3<cr>", "Toggle 3" },
     ["4"] = { "<cmd>ToggleTerm 4<cr>", "Toggle 4" },
+    ["5"] = { "<cmd>ToggleTerm 4<cr>", "Toggle 5" },
+    ["6"] = { "<cmd>ToggleTerm 4<cr>", "Toggle 6" },
+    ["7"] = { "<cmd>ToggleTerm 4<cr>", "Toggle 7" },
+    ["8"] = { "<cmd>ToggleTerm 4<cr>", "Toggle 8" },
+    ["9"] = { "<cmd>ToggleTerm 4<cr>", "Toggle 9" },
+    a = { "<cmd>ToggleTermToggleAll<cr>", "Toggle all" },
+    s = {
+      name = "Send",
+      c = { "<cmd>ToggleTermSendCurrentLine<cr>", "Current line" },
+      v = { "<cmd>ToggleTermSendVisualLines<cr>", "Visual line" },
+      V = { "<cmd>ToggleTermSendVisualSelection<cr>", "Visual selection" },
+    },
     g = { function() LAZYGIT_TOGGLE() end, "Lazygit" }
   },
   m = {

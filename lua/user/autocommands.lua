@@ -14,6 +14,13 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+-- Set terminal options
+vim.api.nvim_create_autocmd({ "TermOpen" }, {
+  callback = function()
+    vim.opt_local.number = false
+  end,
+})
+
 -- Show highlight on yank
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   callback = function()
@@ -25,5 +32,21 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   callback = function()
     vim.lsp.buf.format({ async = false })
+  end,
+})
+
+-- Hide tabline when alpha is active
+vim.api.nvim_create_autocmd({ "User" }, {
+  pattern = "AlphaReady",
+  callback = function()
+    vim.opt.showtabline = 0
+  end,
+})
+
+-- Display tabline when alpha is not active
+vim.api.nvim_create_autocmd({ "BufUnload" }, {
+  buffer = 0,
+  callback = function()
+    vim.opt.showtabline = 2
   end,
 })
