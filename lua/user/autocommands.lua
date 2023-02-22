@@ -35,7 +35,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   end,
 })
 
--- Hide tabline when alpha is active
+-- Hide tabline when Alpha is active
 vim.api.nvim_create_autocmd({ "User" }, {
   pattern = "AlphaReady",
   callback = function()
@@ -43,10 +43,22 @@ vim.api.nvim_create_autocmd({ "User" }, {
   end,
 })
 
--- Display tabline when alpha is not active
+-- Display tabline when Alpha is not active
 vim.api.nvim_create_autocmd({ "BufUnload" }, {
   buffer = 0,
   callback = function()
     vim.opt.showtabline = 2
   end,
+})
+
+-- Auto quit NvimTree
+vim.api.nvim_create_autocmd("BufEnter", {
+  group = vim.api.nvim_create_augroup("NvimTreeClose", { clear = true }),
+  pattern = "NvimTree_*",
+  callback = function()
+    local layout = vim.api.nvim_call_function("winlayout", {})
+    if layout[1] == "leaf" and vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(layout[2]), "filetype") == "NvimTree" and layout[3] == nil then
+      vim.cmd("confirm quit")
+    end
+  end
 })
