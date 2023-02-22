@@ -36,3 +36,19 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     vim.lsp.buf.format({ async = false })
   end,
 })
+
+-- Hide tabline when Alpha is active
+vim.api.nvim_create_autocmd({ "User" }, {
+  pattern = "AlphaReady",
+  callback = function()
+    vim.opt.showtabline = 0
+  end,
+})
+
+-- Display tabline when Alpha is not active
+vim.api.nvim_create_autocmd({ "BufUnload" }, {
+  buffer = 0,
+  callback = function()
+    vim.opt.showtabline = 2
+  end,
+})
