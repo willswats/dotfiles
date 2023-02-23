@@ -105,7 +105,7 @@ local mappings = {
   ["w"] = { "<cmd>w!<cr>", "Write format" },
   ["W"] = { "<cmd>noautocmd w<cr>", "Write" },
   ["q"] = { "<cmd>confirm q<cr>", "Quit" },
-  ["c"] = { function(bufnr) BUF_KILL("bd", bufnr, false) end, "Close buffer" },
+  ["c"] = { "<cmd>confirm bdelete<cr>", "Close buffer" },
   ["h"] = { "<cmd>nohlsearch<cr>", "No highlight" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
@@ -146,8 +146,8 @@ local mappings = {
     l = { "<cmd>Lazy log<cr>", "Log" },
     d = { "<cmd>Lazy debug<cr>", "Debug" },
   },
-  s = {
-    name = "Search",
+  f = {
+    name = "Find",
     f = { "<cmd>Telescope find_files<cr>", "Files" },
     b = { "<cmd>Telescope buffers previewer=false<cr>", "Buffers" },
     c = { "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>", "Colorscheme" },
