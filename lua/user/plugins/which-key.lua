@@ -207,7 +207,7 @@ local mappings = {
       v = { "<cmd>ToggleTermSendVisualLines<cr>", "Visual line" },
       V = { "<cmd>ToggleTermSendVisualSelection<cr>", "Visual selection" },
     },
-    g = { function() LAZYGIT_TOGGLE() end, "Lazygit" }
+    g = { "<cmd>lua LAZYGIT_TOGGLE()<cr>", "Lazygit" }
   },
   m = {
     name = "Markdown",

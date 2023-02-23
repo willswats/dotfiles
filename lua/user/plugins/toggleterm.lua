@@ -3,6 +3,11 @@ if not status_ok then
   return
 end
 
+local status_ok_toggleterm_terminal, toggleterm_terminal = pcall(require, "toggleterm.terminal")
+if not status_ok_toggleterm_terminal then
+  return
+end
+
 toggleterm.setup {
   autochdir = true, -- when neovim changes it current directory the terminal will change it's own when next it's opened
   -- size can be a number or function which is passed the current terminal
@@ -38,7 +43,7 @@ toggleterm.setup {
 }
 
 function LAZYGIT_TOGGLE()
-  local Terminal = require("toggleterm.terminal").Terminal
+  local Terminal = toggleterm_terminal.Terminal
   local lazygit = Terminal:new {
     cmd = "lazygit",
     hidden = true,

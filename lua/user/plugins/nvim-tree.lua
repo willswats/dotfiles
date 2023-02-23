@@ -54,7 +54,7 @@ nvim_tree.setup({
         relative = "editor",
         border = "rounded",
         width = 40,
-        height = 40,
+        height = 100000,
         row = 1,
         col = 1,
       },
