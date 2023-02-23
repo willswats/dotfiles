@@ -47,13 +47,13 @@ nvim_tree.setup({
       },
     },
     float = {
-      enable = false,
+      enable = true,
       quit_on_focus_loss = true,
       open_win_config = {
         relative = "editor",
         border = "rounded",
         width = 30,
-        height = 30,
+        height = 40,
         row = 1,
         col = 1,
       },
@@ -209,7 +209,7 @@ nvim_tree.setup({
       },
     },
     remove_file = {
-      close_window = true,
+      close_window = false,
     },
   },
   trash = {
