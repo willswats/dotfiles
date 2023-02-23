@@ -44,6 +44,7 @@ nvim_tree.setup({
         { key = "h",    action = "close_node" },
         { key = "v",    action = "vsplit" },
         { key = "<CR>", action = "cd" },
+        { key = "d",    action = "trash" }
       },
     },
     float = {
