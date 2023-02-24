@@ -4,12 +4,13 @@ My Neovim Config.
 
 ## Table of Contents
 
-- [Neovim Config](#neovim-config)
-- [Table of Contents](#table-of-contents)
+<!--toc:start-->
+
 - [Prerequisites](#prerequisites)
   - [Formatters and Linters](#formatters-and-linters)
 - [Installation](#installation)
 - [Acknowledgements](#acknowledgements)
+<!--toc:end-->
 
 ## Prerequisites
 
