@@ -106,6 +106,7 @@ local mappings = {
   ["W"] = { "<cmd>noautocmd w<CR>", "Write" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No highlight" },
   ["q"] = { "<cmd>confirm q<CR>", "Quit" },
+  ["c"] = { "<cmd>e $MYVIMRC<cr>", "Configuration" },
   ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
   ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
   b = {
@@ -186,12 +187,6 @@ local mappings = {
   m = {
     name = "Markdown",
     t = { "<cmd>MkdnToggleToDo<cr>", "Toggle to-do" },
-    l = { "<cmd>MkdnNextLink<cr>", "Next link" },
-    L = { "<cmd>MkdnPrevLink<cr>", "Prev link" },
-    h = { "<cmd>MkdnNextHeading<cr>", "Next heading" },
-    H = { "<cmd>MkdnPrevHeading<cr>", "Prev heading" },
-    f = { "<cmd>MkdnFoldSection<cr>", "Fold" },
-    F = { "<cmd>MkdnUnfoldSection<cr>", "Unfold" },
   }
 }
 
