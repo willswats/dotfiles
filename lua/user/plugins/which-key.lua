@@ -104,21 +104,68 @@ local vopts = {
 local mappings = {
   ["w"] = { "<cmd>w!<cr>", "Write format" },
   ["W"] = { "<cmd>noautocmd w<cr>", "Write" },
-  ["q"] = { "<cmd>confirm q<cr>", "Quit" },
   ["h"] = { "<cmd>nohlsearch<cr>", "No highlight" },
-  ["c"] = { "<cmd>e $MYVIMRC<cr>", "Configuration" },
-  ["p"] = { "<cmd>Lazy<cr>", "Plugins" },
+  ["q"] = { "<cmd>confirm q<cr>", "Quit" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
   b = {
-    name = "Buffer",
-    p = { "<cmd>BufferLinePick<cr>", "Pick" },
-    P = { "<cmd>BufferLinePickClose<cr>", "Pick close" },
+    name = "Buffers",
     h = { "<cmd>BufferLineCloseLeft<cr>", "Close left" },
     l = { "<cmd>BufferLineCloseRight<cr>", "Close right" },
-    D = { "<cmd>BufferLineSortByDirectory<cr>", "Sort by directory" },
-    L = { "<cmd>BufferLineSortByExtension<cr>", "Sort by language", },
-    d = { "<cmd>confirm bd<cr>", "Delete buffer" },
+    d = { "<cmd>confirm bd<cr>", "Delete" },
+  },
+  f = {
+    name = "Find",
+    f = { "<cmd>Telescope find_files<cr>", "Files" },
+    p = { "<cmd>Telescope projects<cr>", "Projects" },
+    o = { "<cmd>Telescope oldfiles<cr>", "Old files" },
+    t = { "<cmd>Telescope lives_grep<cr>", "Text" },
+    b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+    r = { "<cmd>Telescope resume<cr>", "Resume" },
+    d = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
+    c = { "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>", "Colorscheme" },
+    g = {
+      name = "Git",
+      s = { "<cmd>Telescope git_status<cr>", "Status" },
+      b = { "<cmd>Telescope git_branches<cr>", "Branches" },
+      c = { "<cmd>Telescope git_commits<cr>", "Commits" },
+      C = { "<cmd>Telescope git_bcommits<cr>", "Buffer commits" },
+    }
+  },
+  t = {
+    name = "Terminal",
+    ["1"] = { "<cmd>ToggleTerm 1<cr>", "Toggle 1" },
+    ["2"] = { "<cmd>ToggleTerm 2<cr>", "Toggle 2" },
+    ["3"] = { "<cmd>ToggleTerm 3<cr>", "Toggle 3" },
+    ["4"] = { "<cmd>ToggleTerm 4<cr>", "Toggle 4" },
+    ["5"] = { "<cmd>ToggleTerm 4<cr>", "Toggle 5" },
+    ["6"] = { "<cmd>ToggleTerm 4<cr>", "Toggle 6" },
+    ["7"] = { "<cmd>ToggleTerm 4<cr>", "Toggle 7" },
+    ["8"] = { "<cmd>ToggleTerm 4<cr>", "Toggle 8" },
+    ["9"] = { "<cmd>ToggleTerm 4<cr>", "Toggle 9" },
+    a = { "<cmd>ToggleTermToggleAll<cr>", "Toggle all" },
+  },
+  g = {
+    name = "Git",
+    j = { "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>", "Next hunk" },
+    k = { "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>", "Prev hunk" },
+    b = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
+    p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview hunk" },
+    r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset hunk" },
+    R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset buffer" },
+    s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage hunk" },
+    S = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo stage hunk" },
+  },
+  l = {
+    name = "LSP",
+    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Action" },
+    j = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next diagnostic" },
+    k = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev diagnostic" },
+    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+    i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementation" },
+    d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
+    D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration" },
+    f = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Float" }
   },
   d = {
     name = "Debug",
@@ -136,88 +183,12 @@ local mappings = {
     q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
     U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
   },
-  f = {
-    name = "Find",
-    f = { "<cmd>Telescope find_files<cr>", "Find files" },
-    b = { "<cmd>Telescope buffers previewer=false<cr>", "Buffers" },
-    c = { "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>", "Colorscheme" },
-    p = { "<cmd>Telescope projects<cr>", "Projects" },
-    o = { "<cmd>Telescope oldfiles<cr>", "Old files" },
-    r = { "<cmd>Telescope resume<cr>", "Resume" },
-    t = { "<cmd>Telescope live_grep<cr>", "Text" },
-    d = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
-    g = {
-      name = "Git",
-      s = { "<cmd>Telescope git_status<cr>", "Status" },
-      b = { "<cmd>Telescope git_branches<cr>", "Branches" },
-      c = { "<cmd>Telescope git_commits<cr>", "Commits" },
-      C = { "<cmd>Telescope git_bcommits<cr>", "Buffer commits" },
-    }
-  },
-  g = {
-    name = "Git",
-    j = { "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>", "Next hunk" },
-    k = { "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>", "Prev hunk" },
-    b = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-    p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview hunk" },
-    r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset hunk" },
-    R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset buffer" },
-    s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage hunk" },
-    u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo stage hunk" },
-    d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Git diff" },
-  },
-  l = {
-    name = "LSP",
-    i = { "<cmd>LspInfo<cr>", "Info" },
-    m = { "<cmd>Mason<cr>", "Mason" },
-    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code action" },
-    A = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens action" },
-    j = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next diagnostic" },
-    k = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev diagnostic" },
-    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-    d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
-    D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration" },
-    o = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Open float" }
-  },
-  t = {
-    name = "Terminal",
-    ["1"] = { "<cmd>ToggleTerm 1<cr>", "Toggle 1" },
-    ["2"] = { "<cmd>ToggleTerm 2<cr>", "Toggle 2" },
-    ["3"] = { "<cmd>ToggleTerm 3<cr>", "Toggle 3" },
-    ["4"] = { "<cmd>ToggleTerm 4<cr>", "Toggle 4" },
-    ["5"] = { "<cmd>ToggleTerm 4<cr>", "Toggle 5" },
-    ["6"] = { "<cmd>ToggleTerm 4<cr>", "Toggle 6" },
-    ["7"] = { "<cmd>ToggleTerm 4<cr>", "Toggle 7" },
-    ["8"] = { "<cmd>ToggleTerm 4<cr>", "Toggle 8" },
-    ["9"] = { "<cmd>ToggleTerm 4<cr>", "Toggle 9" },
-    a = { "<cmd>ToggleTermToggleAll<cr>", "Toggle all" },
-    s = {
-      name = "Send",
-      c = { "<cmd>ToggleTermSendCurrentLine<cr>", "Current line" },
-      v = { "<cmd>ToggleTermSendVisualLines<cr>", "Visual line" },
-      V = { "<cmd>ToggleTermSendVisualSelection<cr>", "Visual selection" },
-    },
-    g = { "<cmd>lua LAZYGIT_TOGGLE()<cr>", "Lazygit" }
-  },
-  m = {
-    name = "Markdown",
-    t = { "<cmd>MkdnToggleToDo<cr>", "Toggle to-do" },
-    l = { "<cmd>MkdnNextLink<cr>", "Next link" },
-    L = { "<cmd>MkdnPrevLink<cr>", "Prev link" },
-    h = { "<cmd>MkdnNextHeading<cr>", "Next heading" },
-    H = { "<cmd>MkdnPrevHeading<cr>", "Prev heading" },
-    f = { "<cmd>MkdnFoldSection<cr>", "Fold" },
-    F = { "<cmd>MkdnUnfoldSection<cr>", "Unfold" },
-  }
 }
 
 local vmappings = {
   ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment" },
-  m = {
-    name = "Markdown",
-    t = { "<cmd>MkdnToggleToDo<cr>", "Toggle to-do" },
-  }
 }
+
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
