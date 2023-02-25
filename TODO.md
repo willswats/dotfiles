@@ -3,6 +3,7 @@
 ## Feature
 
 - [ ] Setup dap
+- [ ] Remove unused key bindings
 - [ ] Lazy load plugins
 
 ## Bug
