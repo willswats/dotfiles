@@ -60,7 +60,7 @@ local setup = {
     spacing = 3, -- spacing between columns
     align = "left", -- align columns left, center or right
   },
-  ignore_missing = false, -- enable this to hide mappings for which you didn't specify a label
+  ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
   hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
   show_help = true, -- show help message on the command line when the popup is visible
   show_keys = true, -- show the currently pressed key and its label as a message in the command line
@@ -183,10 +183,24 @@ local mappings = {
     q = { "<cmd>lua require'dap'.close()<CR>", "Quit" },
     U = { "<cmd>lua require'dapui'.toggle({reset = true})<CR>", "Toggle UI" },
   },
+  m = {
+    name = "Markdown",
+    t = { "<cmd>MkdnToggleToDo<cr>", "Toggle to-do" },
+    l = { "<cmd>MkdnNextLink<cr>", "Next link" },
+    L = { "<cmd>MkdnPrevLink<cr>", "Prev link" },
+    h = { "<cmd>MkdnNextHeading<cr>", "Next heading" },
+    H = { "<cmd>MkdnPrevHeading<cr>", "Prev heading" },
+    f = { "<cmd>MkdnFoldSection<cr>", "Fold" },
+    F = { "<cmd>MkdnUnfoldSection<cr>", "Unfold" },
+  }
 }
 
 local vmappings = {
   ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment" },
+  m = {
+    name = "Markdown",
+    t = { "<cmd>MkdnToggleToDo<cr>", "Toggle to-do" },
+  }
 }
 
 
