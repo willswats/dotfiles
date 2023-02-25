@@ -106,8 +106,8 @@ local mappings = {
   ["W"] = { "<cmd>noautocmd w<cr>", "Write" },
   ["q"] = { "<cmd>confirm q<cr>", "Quit" },
   ["h"] = { "<cmd>nohlsearch<cr>", "No highlight" },
-  ["c"] = { "<cmd>confirm bd<cr>", "Close buffer" },
-  ["f"] = { "<cmd>Telescope find_files<cr>", "Find files" },
+  ["c"] = { "<cmd>e $MYVIMRC<cr>", "Configuration" },
+  ["p"] = { "<cmd>Lazy<cr>", "Plugins" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
   b = {
@@ -118,6 +118,7 @@ local mappings = {
     l = { "<cmd>BufferLineCloseRight<cr>", "Close right" },
     D = { "<cmd>BufferLineSortByDirectory<cr>", "Sort by directory" },
     L = { "<cmd>BufferLineSortByExtension<cr>", "Sort by language", },
+    d = { "<cmd>confirm bd<cr>", "Delete buffer" },
   },
   d = {
     name = "Debug",
@@ -135,20 +136,9 @@ local mappings = {
     q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
     U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
   },
-  p = {
-    name = "Plugin",
-    i = { "<cmd>Lazy install<cr>", "Install" },
-    s = { "<cmd>Lazy sync<cr>", "Sync" },
-    x = { "<cmd>Lazy clean<cr>", "Clean" },
-    c = { "<cmd>Lazy check<cr>", "Clear" },
-    u = { "<cmd>Lazy update<cr>", "Update" },
-    p = { "<cmd>Lazy profile<cr>", "Profile" },
-    l = { "<cmd>Lazy log<cr>", "Log" },
-    d = { "<cmd>Lazy debug<cr>", "Debug" },
-    r = { "<cmd>Lazy restore<cr>", "Restore" }
-  },
-  s = {
-    name = "Search",
+  f = {
+    name = "Find",
+    f = { "<cmd>Telescope find_files<cr>", "Find files" },
     b = { "<cmd>Telescope buffers previewer=false<cr>", "Buffers" },
     c = { "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>", "Colorscheme" },
     p = { "<cmd>Telescope projects<cr>", "Projects" },

@@ -2,8 +2,8 @@
 
 ## Feature
 
+- [ ] Clean up keybindings
 - [ ] Setup dap
-- [ ] Remove unused key bindings
 - [ ] Lazy load plugins
 
 ## Bug
