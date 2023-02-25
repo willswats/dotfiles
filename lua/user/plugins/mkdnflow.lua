@@ -20,8 +20,8 @@ mkdnflow.setup({
   filetypes = { md = true, rmd = true, markdown = true },
   create_dirs = true,
   perspective = {
-    priority = 'first',
-    fallback = 'current',
+    priority = "first",
+    fallback = "current",
     root_tell = false,
     nvim_wd_heel = false,
     update = false
@@ -33,7 +33,7 @@ mkdnflow.setup({
   },
   silent = false,
   links = {
-    style = 'markdown',
+    style = "markdown",
     name_is_source = false,
     conceal = false,
     context = 0,
@@ -42,16 +42,16 @@ mkdnflow.setup({
     transform_explicit = function(text)
       text = text:gsub(" ", "-")
       text = text:lower()
-      text = os.date('%Y-%m-%d_') .. text
+      text = os.date("%Y-%m-%d_") .. text
       return (text)
     end
   },
   to_do = {
-    symbols = { ' ', 'x', ' ' },
+    symbols = { " ", "x", " " },
     update_parents = true,
-    not_started = ' ',
-    in_progress = ' ',
-    complete = 'x'
+    not_started = " ",
+    in_progress = " ",
+    complete = "x"
   },
   tables = {
     trim_whitespace = true,
@@ -63,7 +63,7 @@ mkdnflow.setup({
     bib = { override = false }
   },
   mappings = {
-    MkdnEnter = { { 'n', 'v' }, '<CR>' },
+    MkdnEnter = { { "n", "v" }, "<CR>" },
     MkdnTab = false,
     MkdnSTab = false,
     MkdnNextLink = false,
@@ -82,10 +82,10 @@ mkdnflow.setup({
     MkdnYankFileAnchorLink = false,
     MkdnIncreaseHeading = false,
     MkdnDecreaseHeading = false,
-    MkdnToggleToDo = { { 'n', 'v' }, '<C-Space>' },
+    MkdnToggleToDo = { { "n", "v" }, "mt" },
     MkdnNewListItem = false,
-    MkdnNewListItemBelowInsert = { 'n', 'o' },
-    MkdnNewListItemAboveInsert = { 'n', 'O' },
+    MkdnNewListItemBelowInsert = { "n", "o" },
+    MkdnNewListItemAboveInsert = { "n", "O" },
     MkdnExtendList = false,
     MkdnUpdateNumbering = false,
     MkdnTableNextCell = false,
