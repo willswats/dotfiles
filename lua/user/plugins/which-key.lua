@@ -106,8 +106,8 @@ local mappings = {
   ["W"] = { "<cmd>noautocmd w<cr>", "Write" },
   ["q"] = { "<cmd>confirm q<cr>", "Quit" },
   ["h"] = { "<cmd>nohlsearch<cr>", "No highlight" },
-  ["c"] = { "<cmd>e $MYVIMRC<cr>", "Configuration" },
-  ["r"] = { ":IncRename " .. vim.fn.expand("<cword>"), "Rename" },
+  ["c"] = { "<cmd>confirm bd<cr>", "Close buffer" },
+  ["f"] = { "<cmd>Telescope find_files<cr>", "Find files" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
   b = {
@@ -118,7 +118,6 @@ local mappings = {
     l = { "<cmd>BufferLineCloseRight<cr>", "Close right" },
     D = { "<cmd>BufferLineSortByDirectory<cr>", "Sort by directory" },
     L = { "<cmd>BufferLineSortByExtension<cr>", "Sort by language", },
-    d = { "<cmd>confirm bdelete<cr>", "Delete buffer" },
   },
   d = {
     name = "Debug",
@@ -138,7 +137,6 @@ local mappings = {
   },
   p = {
     name = "Plugin",
-    cmd = "<cmd>Lazy<cr>",
     i = { "<cmd>Lazy install<cr>", "Install" },
     s = { "<cmd>Lazy sync<cr>", "Sync" },
     x = { "<cmd>Lazy clean<cr>", "Clean" },
@@ -151,8 +149,6 @@ local mappings = {
   },
   s = {
     name = "Search",
-    cmd = "<cmd>Telescope<cr>",
-    f = { "<cmd>Telescope find_files<cr>", "Files" },
     b = { "<cmd>Telescope buffers previewer=false<cr>", "Buffers" },
     c = { "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>", "Colorscheme" },
     p = { "<cmd>Telescope projects<cr>", "Projects" },
