@@ -2,7 +2,9 @@
 
 ## Feature
 
-- [ ] Clean up keybindings
+- [ ] Add/remove keybinds:
+  - [ ] Debug
+  - [ ] LSP
 - [ ] Setup dap
 - [ ] Lazy load plugins
 
