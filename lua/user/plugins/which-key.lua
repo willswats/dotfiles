@@ -160,8 +160,10 @@ local mappings = {
   },
   l = {
     name = "LSP",
-    i = { "<cmd>LspInfo<CR>", "Info" },
     m = { "<cmd>Mason<CR>", "Mason" },
+    i = { "<cmd>LspInfo<CR>", "Info" },
+    R = { "<cmd>LspRestart<CR>", "Restart" },
+    l = { "<cmd>LspLog<CR>", "Log" },
     a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Action" },
     j = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Next diagnostic" },
     k = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Prev diagnostic" },
