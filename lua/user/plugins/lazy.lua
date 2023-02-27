@@ -49,8 +49,6 @@ local plugins = {
   },
   { "RRethy/vim-illuminate" }, -- Illuminate text
   { "jakewvincent/mkdnflow.nvim" }, -- Markdown editing
-  { "mfussenegger/nvim-dap" }, -- DAP
-  { "rcarriga/nvim-dap-ui" }, -- DAP UI
 
   -- LSP
   { "neovim/nvim-lspconfig" },
