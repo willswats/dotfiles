@@ -10,6 +10,5 @@
 
 ## Bug
 
-- [ ] New files created in Unity show errors
-- [ ] Use omnisharp_mono when omnisharp is installed
+- [ ] New and moved files in Unity projects show errors
 - [ ] Fix indent line displaying on incorrect spaces on C# files
