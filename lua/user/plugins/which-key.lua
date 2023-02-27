@@ -106,7 +106,8 @@ local mappings = {
   ["W"] = { "<cmd>noautocmd w<CR>", "Write" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No highlight" },
   ["q"] = { "<cmd>confirm q<CR>", "Quit" },
-  ["c"] = { "<cmd>e $MYVIMRC<cr>", "Configuration" },
+  ["c"] = { "<cmd>e $MYVIMRC<CR>", "Configuration" },
+  ["p"] = { "<cmd>Lazy<CR>", "Plugins" },
   ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
   ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
   b = {
@@ -159,11 +160,13 @@ local mappings = {
   },
   l = {
     name = "LSP",
+    i = { "<cmd>LspInfo<CR>", "Info" },
+    m = { "<cmd>Mason<CR>", "Mason" },
     a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Action" },
     j = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Next diagnostic" },
     k = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Prev diagnostic" },
     r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-    i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Implementation" },
+    I = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Implementation" },
     d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
     D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration" },
     f = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Float" }
@@ -186,7 +189,7 @@ local mappings = {
   },
   m = {
     name = "Markdown",
-    t = { "<cmd>MkdnToggleToDo<cr>", "Toggle to-do" },
+    t = { "<cmd>MkdnToggleToDo<CR>", "Toggle to-do" },
   }
 }
 
@@ -194,7 +197,7 @@ local vmappings = {
   ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment" },
   m = {
     name = "Markdown",
-    t = { "<cmd>MkdnToggleToDo<cr>", "Toggle to-do" },
+    t = { "<cmd>MkdnToggleToDo<CR>", "Toggle to-do" },
   }
 }
 
