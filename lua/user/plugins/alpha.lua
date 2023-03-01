@@ -14,11 +14,10 @@ if not status_ok_icons then
 end
 
 dashboard.section.buttons.val = {
-  dashboard.button("o", icons.ui.Files .. "  " .. "Old files", ":Telescope oldfiles<cr>"),
-  dashboard.button("p", icons.ui.Project .. "  " .. "Projects", ":Telescope projects<cr>"),
-  dashboard.button("s", icons.ui.Package .. "  " .. "Sync plugins", ":Lazy sync<cr>"),
-  dashboard.button("c", icons.ui.Gear .. "  " .. "Configuration", ":e $MYVIMRC<cr>"),
-  dashboard.button("q", icons.ui.BoldClose .. "  " .. "Quit", ":qa<cr>"),
+  dashboard.button("p", icons.ui.Project .. "  " .. "Projects", ":Telescope projects<CR>"),
+  dashboard.button("o", icons.ui.Files .. "  " .. "Old files", ":Telescope oldfiles<CR>"),
+  dashboard.button("s", icons.ui.Gear .. "  " .. "Settings", ":e $MYVIMRC<CR>"),
+  dashboard.button("q", icons.ui.BoldClose .. "  " .. "Quit", ":qa<CR>"),
 }
 
 alpha.setup(dashboard.opts)

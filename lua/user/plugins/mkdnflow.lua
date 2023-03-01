@@ -82,7 +82,7 @@ mkdnflow.setup({
     MkdnYankFileAnchorLink = false,
     MkdnIncreaseHeading = false,
     MkdnDecreaseHeading = false,
-    MkdnToggleToDo = false,
+    MkdnToggleToDo = { { 'n', 'v' }, 't' },
     MkdnNewListItem = false,
     MkdnNewListItemBelowInsert = { "n", "o" },
     MkdnNewListItemAboveInsert = { "n", "O" },
