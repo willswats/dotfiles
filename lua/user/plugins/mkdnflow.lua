@@ -66,10 +66,10 @@ mkdnflow.setup({
     MkdnEnter = { { "n", "v" }, "<CR>" },
     MkdnTab = false,
     MkdnSTab = false,
-    MkdnNextLink = false,
-    MkdnPrevLink = false,
-    MkdnNextHeading = false,
-    MkdnPrevHeading = false,
+    MkdnNextLink = { "n", "ml" },
+    MkdnPrevLink = { "n", "mL" },
+    MkdnNextHeading = { "n", "mh" },
+    MkdnPrevHeading = { "n", "mH" },
     MkdnGoBack = false,
     MkdnGoForward = false,
     MkdnCreateLink = false,
@@ -82,10 +82,10 @@ mkdnflow.setup({
     MkdnYankFileAnchorLink = false,
     MkdnIncreaseHeading = false,
     MkdnDecreaseHeading = false,
-    MkdnToggleToDo = false,
+    MkdnToggleToDo = { { "n", "v" }, "mt" },
     MkdnNewListItem = false,
-    MkdnNewListItemBelowInsert = { "n", "o" },
-    MkdnNewListItemAboveInsert = { "n", "O" },
+    MkdnNewListItemBelowInsert = { "n", "mo" },
+    MkdnNewListItemAboveInsert = { "n", "mO" },
     MkdnExtendList = false,
     MkdnUpdateNumbering = false,
     MkdnTableNextCell = false,
@@ -96,7 +96,7 @@ mkdnflow.setup({
     MkdnTableNewRowAbove = false,
     MkdnTableNewColAfter = false,
     MkdnTableNewColBefore = false,
-    MkdnFoldSection = false,
-    MkdnUnfoldSection = false
+    MkdnFoldSection = { "n", "mf" },
+    MkdnUnfoldSection = { "n", "mF" }
   }
 })

@@ -106,18 +106,15 @@ local mappings = {
   ["W"] = { "<cmd>noautocmd w<CR>", "Write" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No highlight" },
   ["q"] = { "<cmd>confirm q<CR>", "Quit" },
-  ["c"] = { "<cmd>confirm bd<CR>", "Close buffer" },
-  ["s"] = { "<cmd>e $MYVIMRC<CR>", "Settings" },
+  ["c"] = { "<cmd>e $MYVIMRC<CR>", "Configuration" },
+  ["p"] = { "<cmd>Lazy<CR>", "Plugins" },
   ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
   ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
   b = {
     name = "Buffers",
-    p = { "<cmd>BufferLinePick<cr>", "Pick" },
-    P = { "<cmd>BufferLinePickClose<cr>", "Pick close" },
+    d = { "<cmd>confirm bd<CR>", "Delete" },
     h = { "<cmd>BufferLineCloseLeft<cr>", "Close left" },
     l = { "<cmd>BufferLineCloseRight<cr>", "Close right" },
-    D = { "<cmd>BufferLineSortByDirectory<cr>", "Sort by directory" },
-    L = { "<cmd>BufferLineSortByExtension<cr>", "Sort by language" },
   },
   f = {
     name = "Find",
@@ -188,19 +185,6 @@ local mappings = {
       H = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Help" },
     },
   },
-  p = {
-    name = "Plugins",
-    i = { "<cmd>Lazy install<CR>", "Install" },
-    u = { "<cmd>Lazy update<CR>", "Update" },
-    s = { "<cmd>Lazy sync<CR>", "Sync" },
-    x = { "<cmd>Lazy clean<CR>", "Clean" },
-    c = { "<cmd>Lazy check<CR>", "Check" },
-    l = { "<cmd>Lazy log<CR>", "Log" },
-    r = { "<cmd>Lazy restore<CR>", "Restore" },
-    p = { "<cmd>Lazy profile<CR>", "Profile" },
-    d = { "<cmd>Lazy debug<CR>", "Debug" },
-    ["?"] = { "<cmd>Lazy help<CR>", "Help" },
-  },
   d = {
     name = "Debug",
     t = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle breakpoint" },
@@ -217,24 +201,10 @@ local mappings = {
     q = { "<cmd>lua require'dap'.close()<CR>", "Quit" },
     U = { "<cmd>lua require'dapui'.toggle({reset = true})<CR>", "Toggle UI" },
   },
-  m = {
-    name = "Markdown",
-    t = { "<cmd>MkdnToggleToDo<CR>", "Toggle to-do" },
-    l = { "<cmd>MkdnNextLink<CR>", "Next link" },
-    L = { "<cmd>MkdnPrevLink<CR>", "Prev link" },
-    h = { "<cmd>MkdnNextHeading<CR>", "Next heading" },
-    H = { "<cmd>MkdnPrevHeading<CR>", "Prev heading" },
-    f = { "<cmd>MkdnFoldSection<CR>", "Fold" },
-    F = { "<cmd>MkdnUnfoldSection<CR>", "Unfold" },
-  }
 }
 
 local vmappings = {
   ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment" },
-  m = {
-    name = "Markdown",
-    t = { "<cmd>MkdnToggleToDo<CR>", "Toggle to-do" },
-  }
 }
 
 
