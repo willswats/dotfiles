@@ -14,9 +14,9 @@ if not status_ok_icons then
 end
 
 dashboard.section.buttons.val = {
-  dashboard.button("p", icons.ui.Project .. "  " .. "Projects", ":Telescope projects<CR>"),
-  dashboard.button("o", icons.ui.Files .. "  " .. "Old files", ":Telescope oldfiles<CR>"),
-  dashboard.button("s", icons.ui.Package .. "  " .. "Sync plugins", ":Lazy sync<CR>"),
+  dashboard.button("fp", icons.ui.Project .. "  " .. "Projects", ":Telescope projects<CR>"),
+  dashboard.button("fo", icons.ui.Files .. "  " .. "Old files", ":Telescope oldfiles<CR>"),
+  dashboard.button("p", icons.ui.Package .. "  " .. "Plugins", ":Lazy<CR>"),
   dashboard.button("c", icons.ui.Gear .. "  " .. "Configuration", ":e $MYVIMRC<CR>"),
   dashboard.button("q", icons.ui.BoldClose .. "  " .. "Quit", ":qa<CR>"),
 }
