@@ -187,7 +187,13 @@ local mappings = {
   },
   m = {
     name = "Markdown",
-    t = { "<cmd>MkdnToggleToDo<CR>", "Toggle to-do" },
+    t = { "<cmd>MkdnToggleToDo<cr>", "Toggle to-do" },
+    l = { "<cmd>MkdnNextLink<cr>", "Next link" },
+    L = { "<cmd>MkdnPrevLink<cr>", "Prev link" },
+    h = { "<cmd>MkdnNextHeading<cr>", "Next heading" },
+    H = { "<cmd>MkdnPrevHeading<cr>", "Prev heading" },
+    f = { "<cmd>MkdnFoldSection<cr>", "Fold" },
+    F = { "<cmd>MkdnUnfoldSection<cr>", "Unfold" },
   }
 }
 
