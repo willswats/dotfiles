@@ -219,8 +219,7 @@ local mappings = {
   },
   m = {
     name = "Markdown",
-    i = { "<cmd>MkdnIncreaseHeading<CR>", "Increase heading" },
-    I = { "<cmd>MkdnDecreaseHeading<CR>", "Decrease heading" },
+    t = { "<cmd>MkdnToggleToDo<CR>", "Toggle to-do" },
     l = { "<cmd>MkdnNextLink<CR>", "Next link" },
     L = { "<cmd>MkdnPrevLink<CR>", "Prev link" },
     h = { "<cmd>MkdnNextHeading<CR>", "Next heading" },
