@@ -2,7 +2,10 @@
 
 ## Feature
 
-- [ ] Add/remove LSP keymaps
+- [ ] Add/remove keybinds:
+  - [ ] Debug
+  - [ ] LSP
+- [ ] Move lsp mappings into lsp.lua (only activate if server supports)
 - [ ] Setup dap
 - [ ] Lazy load plugins
 
