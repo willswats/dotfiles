@@ -10,7 +10,7 @@ end
 
 local setup = {
   plugins = {
-    marks = false, -- shows a list of your marks on ' and `
+    marks = true, -- shows a list of your marks on ' and `
     registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
     spelling = {
       enabled = true,
@@ -19,13 +19,13 @@ local setup = {
     -- the presets plugin, adds help for a bunch of default keybindings in Neovim
     -- No actual key bindings are created
     presets = {
-      operators = false, -- adds help for operators like d, y, ...
-      motions = false, -- adds help for motions
-      text_objects = false, -- help for text objects triggered after entering an operator
-      windows = false, -- default bindings on <c-w>
-      nav = false, -- misc bindings to work with windows
-      z = false, -- bindings for folds, spelling and others prefixed with z
-      g = false, -- bindings for prefixed with g
+      operators = true, -- adds help for operators like d, y, ...
+      motions = true, -- adds help for motions
+      text_objects = true, -- help for text objects triggered after entering an operator
+      windows = true, -- default bindings on <c-w>
+      nav = true, -- misc bindings to work with windows
+      z = true, -- bindings for folds, spelling and others prefixed with z
+      g = true, -- bindings for prefixed with g
     },
   },
   -- add operators that will trigger motion and text object completion
@@ -60,7 +60,7 @@ local setup = {
     spacing = 3, -- spacing between columns
     align = "left", -- align columns left, center or right
   },
-  ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
+  ignore_missing = false, -- enable this to hide mappings for which you didn't specify a label
   hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
   show_help = true, -- show help message on the command line when the popup is visible
   show_keys = true, -- show the currently pressed key and its label as a message in the command line
@@ -107,7 +107,7 @@ local mappings = {
   ["h"] = { "<cmd>nohlsearch<CR>", "No highlight" },
   ["q"] = { "<cmd>confirm q<CR>", "Quit" },
   ["c"] = { "<cmd>e $MYVIMRC<CR>", "Configuration" },
-  ["p"] = { "<cmd>Lazy<CR>", "Plugins" },
+  -- ["p"] = { "<cmd>Lazy<CR>", "Plugins" },
   ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
   ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
   b = {
@@ -174,7 +174,7 @@ local mappings = {
       l = { "<cmd>lua vim.diagnostic.setloclist()<CR>", "Loc" },
     },
     b = {
-      name = "Buf",
+      name = "Buffer",
       a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Action" },
       r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
       d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
@@ -184,6 +184,19 @@ local mappings = {
       h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
       H = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Help" },
     },
+  },
+  p = {
+    name = "Plugins",
+    i = { "<cmd>Lazy install<CR>", "Install" },
+    u = { "<cmd>Lazy update<CR>", "Update" },
+    s = { "<cmd>Lazy sync<CR>", "Sync" },
+    x = { "<cmd>Lazy clean<CR>", "Clean" },
+    c = { "<cmd>Lazy check<CR>", "Check" },
+    l = { "<cmd>Lazy log<CR>", "Log" },
+    r = { "<cmd>Lazy restore<CR>", "Restore" },
+    p = { "<cmd>Lazy profile<CR>", "Profile" },
+    d = { "<cmd>Lazy debug<CR>", "Debug" },
+    ["?"] = { "<cmd>Lazy help<CR>", "Help" },
   },
   d = {
     name = "Debug",
