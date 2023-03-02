@@ -113,8 +113,8 @@ local mappings = {
   b = {
     name = "Buffers",
     d = { "<cmd>confirm bd<CR>", "Delete" },
-    h = { "<cmd>BufferLineCloseLeft<cr>", "Close left" },
-    l = { "<cmd>BufferLineCloseRight<cr>", "Close right" },
+    h = { "<cmd>BufferLineCloseLeft<CR>", "Close left" },
+    l = { "<cmd>BufferLineCloseRight<CR>", "Close right" },
   },
   f = {
     name = "Find",

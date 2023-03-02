@@ -63,6 +63,6 @@ local signs = {
   { name = "DiagnosticSignInfo",  text = icons.diagnostics.BoldInformation },
 }
 
-for _, sign in ipairs(signs) do
+for _, sign in pairs(signs) do
   vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
 end
