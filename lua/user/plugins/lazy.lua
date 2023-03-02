@@ -39,7 +39,6 @@ local plugins = {
       "MunifTanjim/nui.nvim",
     },
   },
-  { "folke/todo-comments.nvim" }, -- Find TODO comments
   { "lewis6991/gitsigns.nvim" }, -- Git signs
   { "jose-elias-alvarez/null-ls.nvim" }, -- Format & Lint
   { "numToStr/Comment.nvim" }, -- Comment

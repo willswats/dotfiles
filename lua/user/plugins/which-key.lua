@@ -122,7 +122,6 @@ local mappings = {
     p = { "<cmd>Telescope projects<CR>", "Projects" },
     o = { "<cmd>Telescope oldfiles<CR>", "Old files" },
     t = { "<cmd>Telescope live_grep<CR>", "Text" },
-    T = { "<cmd>TodoTelescope<CR>", "Todo comments" },
     b = { "<cmd>Telescope buffers<CR>", "Buffers" },
     r = { "<cmd>Telescope resume<CR>", "Resume" },
     d = { "<cmd>Telescope diagnostics<CR>", "Diagnostics" },
