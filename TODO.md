@@ -2,6 +2,7 @@
 
 ## Feature
 
+- [ ] Move lsp keymaps into on_attach
 - [ ] Setup dap
 - [ ] Lazy load plugins
 
