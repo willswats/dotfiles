@@ -1,6 +1,6 @@
 # Neovim Config
 
-My Neovim Config.
+My Neovim config.
 
 ## Table of Contents
 
