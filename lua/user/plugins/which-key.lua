@@ -145,7 +145,6 @@ local mappings = {
     ["7"] = { "<cmd>ToggleTerm 4<CR>", "Toggle 7" },
     ["8"] = { "<cmd>ToggleTerm 4<CR>", "Toggle 8" },
     ["9"] = { "<cmd>ToggleTerm 4<CR>", "Toggle 9" },
-    a = { "<cmd>ToggleTermToggleAll<CR>", "Toggle all" },
     g = { "<cmd>lua LAZYGIT_TOGGLE()<CR>", "Toggle lazygit" },
   },
   g = {
