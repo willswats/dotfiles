@@ -6,12 +6,9 @@ My dotfiles.
 
 <!--toc:start-->
 
-- [configs](#configs)
+- [General Information](#general-information)
 <!--toc:end-->
 
-## configs
+## General Information
 
-- [fish](./fish/README.md)
-- [fonts](./fonts/README.md)
-- [alacritty](./alacritty/README.md)
-- [nvim](./nvim/README.md)
+Navigate to each directory for instructions on how to install each config.
