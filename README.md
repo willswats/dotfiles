@@ -1,14 +1,45 @@
-# dotfiles
+# Neovim Config
 
-My dotfiles.
+My Neovim Config.
 
 ## Table of Contents
 
 <!--toc:start-->
 
-- [General Information](#general-information)
+- [Prerequisites](#prerequisites)
+  - [Formatters and Linters](#formatters-and-linters)
+- [Installation](#installation)
+- [Acknowledgements](#acknowledgements)
 <!--toc:end-->
 
-## General Information
+## Prerequisites
 
-Navigate to each directory for instructions on how to install each config.
+```bash
+pnpm install -g neovim
+python3 -m pip install --user pynvim
+cargo install fd-find ripgrep
+```
+
+### Formatters and Linters
+
+```bash
+pnpm i -g prettier markdownlint-cli
+```
+
+## Installation
+
+HTTPS:
+
+```bash
+git clone https://github.com/willswats/neovim-config.git ~/.config/nvim
+```
+
+SSH:
+
+```bash
+git clone git@github.com:willswats/neovim-config.git ~/.config/nvim
+```
+
+## Acknowledgements
+
+I've used code from [LunarVim](https://github.com/lunarvim/lunarvim) throughout the config.
