@@ -20,6 +20,8 @@ python3 -m pip install --user pynvim
 cargo install fd-find ripgrep
 ```
 
+- A nerd font
+
 ### Formatters and Linters
 
 ```bash
