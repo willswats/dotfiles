@@ -42,11 +42,11 @@ toggleterm.setup {
   },
 }
 
-function GITUI_TOGGLE()
+function LAZYGIT_TOGGLE()
   local Terminal = toggleterm_terminal.Terminal
-  local gitui = Terminal:new {
-    cmd = "gitui -t mocha.ron",
+  local lazygit = Terminal:new({
+    cmd = "lazygit",
     count = 100
-  }
-  gitui:toggle()
+  })
+  lazygit:toggle()
 end
