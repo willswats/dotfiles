@@ -20,7 +20,7 @@ python3 -m pip install --user pynvim
 cargo install fd-find ripgrep
 ```
 
-- A nerd font
+- A patched nerd font (I use [Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack).
 
 ### Formatters and Linters
 
