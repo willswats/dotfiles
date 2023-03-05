@@ -7,6 +7,10 @@ git clone https://github.com/catppuccin/alacritty.git ~/.config/alacritty/catppu
 # Neovim
 gio trash ~/.config/nvim
 ln -s "$(pwd)/nvim" ~/.config/
+pnpm install -g neovim
+python3 -m pip install --user pynvim
+cargo install fd-find ripgrep
+pnpm i -g prettier markdownlint-cli
 
 # fish
 gio trash ~/.config/fish

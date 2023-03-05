@@ -5,7 +5,12 @@ My dotfiles.
 ## Prerequisites
 
 - `gio`
+- `git`
+- `pnpm`
+- `python`
+- `pip`
+- `cargo`
 
-## General Information
+## Install
 
-The install script will send old configs to the trash, and will symlink the configs from this directory.
+Run `install.sh`.
