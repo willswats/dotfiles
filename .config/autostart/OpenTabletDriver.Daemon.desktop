@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=0.0.0
-Name=OpenTabletDriver.Daemon
-Exec=/usr/share/OpenTabletDriver/OpenTabletDriver.Daemon
-Icon=/usr/share/pixmaps/otd.png
-Terminal=false
-Type=Application
-StartupNotify=true
-Categories=Settings;

@@ -1,33 +1,47 @@
-# dotfiles
+# Neovim Config
 
-My dotfiles.
+My Neovim config.
 
 ## Table of Contents
 
 <!--toc:start-->
 
 - [Prerequisites](#prerequisites)
-- [Install](#install)
+  - [Formatters and Linters](#formatters-and-linters)
+- [Installation](#installation)
+- [Acknowledgements](#acknowledgements)
 <!--toc:end-->
 
 ## Prerequisites
 
-These must be installed:
+```bash
+pnpm install -g neovim
+python3 -m pip install --user pynvim
+cargo install fd-find ripgrep
+```
 
-- `gio`
-- `git`
-- `pnpm`
-- `python`
-- `pip`
-- `cargo`
+- A patched nerd font (I use [Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)).
 
-## Install
+### Formatters and Linters
 
-1. Run `install.sh`.
+```bash
+pnpm i -g prettier markdownlint-cli
+```
 
-`install.sh` will:
+## Installation
 
-1. `gio trash` existing conflicting directories and files.
-2. symlink all directories and files from this repository to their locations.
-3. Install my Neovim config's dependencies.
-4. Install my Neovim config's configured formatters and linters.
+HTTPS:
+
+```bash
+git clone https://github.com/willswats/neovim-config.git ~/.config/nvim
+```
+
+SSH:
+
+```bash
+git clone git@github.com:willswats/neovim-config.git ~/.config/nvim
+```
+
+## Acknowledgements
+
+I've used code from [LunarVim](https://github.com/lunarvim/lunarvim) throughout the config.
