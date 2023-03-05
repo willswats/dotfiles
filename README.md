@@ -2,6 +2,14 @@
 
 My dotfiles.
 
+## Table of Contents
+
+<!--toc:start-->
+
+- [Prerequisites](#prerequisites)
+- [Install](#install)
+<!--toc:end-->
+
 ## Prerequisites
 
 - `gio`
