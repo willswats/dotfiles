@@ -18,3 +18,9 @@ symlink_directory "local/share/fonts"
 symlink_file_to_directory "config/autostart/rclone" "config/autostart/"
 symlink_file_to_directory "config/autostart/OpenTabletDriver.Daemon" "config/autostart/"
 symlink_file_to_directory "config/gtk-3.0/bookmarks" "config/gtk-3.0/" 
+
+pnpm install -g neovim
+python3 -m pip install --user pynvim
+cargo install fd-find ripgrep
+
+pnpm i -g prettier markdownlint-cli
