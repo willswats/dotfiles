@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=rclone
+Exec=sh -c "rclone mount --vfs-cache-mode writes remote-name: ~/Drive"
+Terminal=false
+Type=Application
+StartupNotify=false
+Categories=Network;
