@@ -12,21 +12,15 @@ My dotfiles.
 
 ## Prerequisites
 
+Install:
+
 - `gio`
-- `git`
-- `pnpm`
-- `python`
-- `pip`
-- `cargo`
 
 ## Install
 
-1. Run `install.sh`.
+1. Run `symlink.sh`.
 
-`install.sh` will:
+`symlink.sh` will:
 
-- `gio trash` existing configs.
-- symlink the configs from this repository to their locations.
-- `git clone` the alacritty theme I use to `~/.config/alacritty`.
-- Install my Neovim config's dependencies.
-- Install my Neovim configs's configured formatters and linters.
+1. `gio trash` existing conflicting directories and files.
+2. symlink all directories and files from this repository to their locations.
