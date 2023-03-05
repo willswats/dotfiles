@@ -21,6 +21,6 @@ My dotfiles.
 
 ## Install
 
-Run `install.sh`.
+1. Run `install.sh`.
 
 `install.sh` will `gio trash` existing configs and symlink the configs from this repository to their locations.
