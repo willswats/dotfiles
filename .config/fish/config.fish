@@ -1,6 +1,9 @@
 # Remove fish greeting
 set -g fish_greeting
 
+# Set theme
+fish_config theme choose "Catppuccin Mocha"
+
 # Set alias
 alias flatdel="flatpak uninstall --delete-data"
 alias main="distrobox enter main -- fish"
