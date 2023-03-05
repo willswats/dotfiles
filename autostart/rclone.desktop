@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=rclone
-Exec=sh -c "rclone mount --vfs-cache-mode writes remote-name: ~/Drive"
+Exec=sh -c "rclone mount --vfs-cache-mode writes google-drive: ~/Drive"
 Terminal=false
 Type=Application
 StartupNotify=false
