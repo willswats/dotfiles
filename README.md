@@ -22,3 +22,5 @@ My dotfiles.
 ## Install
 
 Run `install.sh`.
+
+`install.sh` will trash old configs and symlink the configs from this repository to their locations.
