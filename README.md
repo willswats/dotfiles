@@ -23,4 +23,4 @@ My dotfiles.
 
 Run `install.sh`.
 
-`install.sh` will trash old configs and symlink the configs from this repository to their locations.
+`install.sh` will `gio trash` existing configs and symlink the configs from this repository to their locations.
