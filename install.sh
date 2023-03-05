@@ -14,17 +14,19 @@ pnpm i -g prettier markdownlint-cli
 
 # fish
 gio trash ~/.config/fish
-mkdir ~/.config/fish
+mkdir -p ~/.config/fish
 ln -s "$(pwd)/fish/config.fish" ~/.config/fish/
 
 # autostart
 gio trash ~/.config/autostart/rclone
-ln -s "$(pwd)/autostart/rclone" ~/.config/autostart/
 gio trash ~/.config/autostart/OpenTabletDriver.Daemon
+mkdir -p ~/.config/autostart
+ln -s "$(pwd)/autostart/rclone" ~/.config/autostart/
 ln -s "$(pwd)/autostart/OpenTabletDriver.Daemon" ~/.config/autostart/
 
 # bookmarks
 gio trash ~/.config/gtk-3.0/bookmarks
+mkdir -p ~/.config/gtk-3.0
 ln -s "$(pwd)/gtk-3.0/bookmarks" ~/.config/gtk-3.0/
 
 # fonts
