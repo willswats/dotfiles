@@ -27,5 +27,6 @@ My dotfiles.
 
 - `gio trash` existing configs.
 - symlink the configs from this repository to their locations.
+- `git clone` the alacritty theme I use to `~/.config/alacritty`.
 - Install my Neovim config's dependencies.
 - Install my Neovim configs's configured formatters and linters.
