@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=nvim
+Exec=/var/home/will/.local/bin/nvim %f
+Categories=Other;
+NoDisplay=true
+MimeType=text/plain
+Terminal=true
+X-KeepTerminal=false
