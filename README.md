@@ -3,7 +3,8 @@
 <!--toc:start-->
 
 - [Install](#install)
-- [Neovim](#neovim)
+  - [Neovim](#neovim)
+- [Uninstall](#uninstall)
 <!--toc:end-->
 
 My dotfiles.
@@ -28,9 +29,7 @@ SSH:
 git clone git@github.com:willswats/dotfiles.git ~/dotfiles
 ```
 
-Run `stow */` to symlink all directories.
-
-Run `stow foo` to symlink a specific directory.
+Run `stow */` to symlink all directories, or `stow foo` to symlink a specific directory.
 
 ### Neovim
 
@@ -43,3 +42,7 @@ pnpm install -g neovim # alternatively, replace this with npm
 python3 -m pip install --user pynvim
 cargo install fd-find ripgrep
 ```
+
+## Uninstall
+
+Run `stow -D */` to remove all symlinks, or `stow -D foo` to remove a symlink for a specific directory.
