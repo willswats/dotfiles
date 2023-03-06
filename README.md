@@ -1,47 +1,14 @@
-# Neovim Config
+# dotfiles
 
-My Neovim config.
-
-## Table of Contents
-
-<!--toc:start-->
-
-- [Prerequisites](#prerequisites)
-  - [Formatters and Linters](#formatters-and-linters)
-- [Installation](#installation)
-- [Acknowledgements](#acknowledgements)
-<!--toc:end-->
+My dotfiles.
 
 ## Prerequisites
 
-```bash
-pnpm install -g neovim
-python3 -m pip install --user pynvim
-cargo install fd-find ripgrep
-```
+Install: `stow`
 
-- A patched nerd font (I use [Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)).
+## Install
 
-### Formatters and Linters
-
-```bash
-pnpm i -g prettier markdownlint-cli
-```
-
-## Installation
-
-HTTPS:
-
-```bash
-git clone https://github.com/willswats/neovim-config.git ~/.config/nvim
-```
-
-SSH:
-
-```bash
-git clone git@github.com:willswats/neovim-config.git ~/.config/nvim
-```
-
-## Acknowledgements
-
-I've used code from [LunarVim](https://github.com/lunarvim/lunarvim) throughout the config.
+1. Back up existing configurations.
+2. Clone this repository to your home directory
+3. Run `stow */` to symlink all directories,
+   or `stow foo` to symlink a specific directory.
