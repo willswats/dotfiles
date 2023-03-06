@@ -1,12 +1,14 @@
 # TODO
 
-## Feature
+## Neovim
+
+### Feature
 
 - [ ] Move lsp keymaps into on_attach
 - [ ] Setup dap
 - [ ] Lazy load plugins
 
-## Bug
+### Bug
 
 - [ ] New and moved files in Unity projects show errors
 - [ ] Fix indent line displaying on incorrect spaces on C# files

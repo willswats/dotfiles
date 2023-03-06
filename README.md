@@ -1,15 +1,16 @@
 # dotfiles
 
+<!--toc:start-->
+
+- [Install](#install)
+- [Neovim](#neovim)
+<!--toc:end-->
+
 My dotfiles.
 
-## Prerequisites
-
-Have installed:
-
-- `git`
-- `stow`
-
 ## Install
+
+`git` and `stow` need to be installed.
 
 Back up existing configurations.
 
@@ -33,10 +34,12 @@ Run `stow foo` to symlink a specific directory.
 
 ### Neovim
 
-Install these dependencies:
+`npm` or `pnpm`, `python3`, `pip` and `cargo` need to be installed.
+
+Install dependencies:
 
 ```bash
-pnpm install -g neovim
+pnpm install -g neovim # alternatively, replace this with npm
 python3 -m pip install --user pynvim
 cargo install fd-find ripgrep
 ```
