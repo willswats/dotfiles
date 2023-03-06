@@ -4,11 +4,29 @@ My dotfiles.
 
 ## Prerequisites
 
-Install: `stow`
+Have installed:
+
+- `git`
+- `stow`
 
 ## Install
 
-1. Back up existing configurations.
-2. Clone this repository to your home directory
-3. Run `stow */` to symlink all directories,
-   or `stow foo` to symlink a specific directory.
+Back up existing configurations.
+
+Clone this repository to your home:
+
+HTTPS:
+
+```bash
+git clone https://github.com/willswats/dotfiles.git ~/dotfiles
+```
+
+SSH:
+
+```bash
+git clone git@github.com:willswats/dotfiles.git ~/dotfiles
+```
+
+Run `stow */` to symlink all directories.
+
+Run `stow foo` to symlink a specific directory.
