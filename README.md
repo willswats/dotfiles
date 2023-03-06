@@ -30,3 +30,13 @@ git clone git@github.com:willswats/dotfiles.git ~/dotfiles
 Run `stow */` to symlink all directories.
 
 Run `stow foo` to symlink a specific directory.
+
+### Neovim
+
+Install these dependencies:
+
+```bash
+pnpm install -g neovim
+python3 -m pip install --user pynvim
+cargo install fd-find ripgrep
+```
