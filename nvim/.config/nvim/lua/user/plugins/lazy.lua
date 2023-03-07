@@ -42,6 +42,7 @@ local plugins = {
   { "lewis6991/gitsigns.nvim" }, -- Git signs
   { "jose-elias-alvarez/null-ls.nvim" }, -- Format & Lint
   { "numToStr/Comment.nvim" }, -- Comment
+  { "ahmedkhalf/project.nvim" }, -- Auto CD
   { "windwp/nvim-autopairs" }, -- Auto pair
   {
     "lukas-reineke/indent-blankline.nvim", -- Show indent line

@@ -119,6 +119,7 @@ local mappings = {
   f = {
     name = "Find",
     f = { "<cmd>Telescope find_files<CR>", "Files" },
+    p = { "<cmd>Telescope projects<CR>", "Projects" },
     o = { "<cmd>Telescope oldfiles<CR>", "Old files" },
     t = { "<cmd>Telescope live_grep<CR>", "Text" },
     b = { "<cmd>Telescope buffers<CR>", "Buffers" },
