@@ -4,6 +4,8 @@
 
 ### Feature
 
+- [ ] Setup project.nvim to allow CD
+- [ ] Add session plugin
 - [ ] Move lsp keymaps into on_attach
 - [ ] Setup dap
 - [ ] Lazy load plugins
