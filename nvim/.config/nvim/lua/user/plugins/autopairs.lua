@@ -3,16 +3,6 @@ if not status_ok_nvim_autopairs then
   return
 end
 
-local status_ok_cmp, cmp = pcall(require, "cmp")
-if not status_ok_cmp then
-  return
-end
-
-local status_ok_cmp_autopairs, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
-if not status_ok_cmp_autopairs then
-  return
-end
-
 nvim_autopairs.setup({
   map_char = {
     all = "(",
@@ -53,5 +43,3 @@ nvim_autopairs.setup({
     highlight_grey = "Comment",
   },
 })
-
-cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
