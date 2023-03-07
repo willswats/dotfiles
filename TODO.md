@@ -1,5 +1,11 @@
 # TODO
 
+## dotfiles
+
+- [ ] Add configs:
+  - [ ] Firefox
+  - [ ] PCManFM
+
 ## Neovim
 
 ### Feature
