@@ -1,5 +1,4 @@
 gui:
-  # use the mocha catpuccin theme
   theme:
     lightTheme: false
     activeBorderColor:
