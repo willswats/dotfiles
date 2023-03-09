@@ -26,13 +26,13 @@ end
 mason.setup()
 mason_lspconfig.setup({
   ensure_installed = {
+    "marksman",
     "html",
     "cssls",
     "jsonls",
     "tsserver",
     "lua_ls",
     "rust_analyzer",
-    "taplo",
   },
   automatic_installation = true,
 })
