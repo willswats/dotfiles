@@ -3,7 +3,7 @@
 <!--toc:start-->
 
 - [Install](#install)
-  - [Neovim](#neovim)
+  - [Specific Installs](#specific-installs)
 - [Uninstall](#uninstall)
 <!--toc:end-->
 
@@ -31,17 +31,9 @@ git clone git@github.com:willswats/dotfiles.git ~/dotfiles
 
 Run `stow */` to symlink all directories, or `stow foo` to symlink a specific directory.
 
-### Neovim
+### Specific Installs
 
-`npm` or `pnpm`, `python3`, `pip` and `cargo` need to be installed.
-
-Install dependencies:
-
-```bash
-pnpm install -g neovim # alternatively, replace this with npm
-python3 -m pip install --user pynvim
-cargo install fd-find ripgrep
-```
+- [Neovim](/nvim/.config/nvim/README.md)
 
 ## Uninstall
 

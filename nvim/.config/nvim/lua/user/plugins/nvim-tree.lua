@@ -214,7 +214,7 @@ nvim_tree.setup({
     },
   },
   trash = {
-    cmd = "gio trash",
+    cmd = "trash",
   },
   live_filter = {
     prefix = "[FILTER]: ",
