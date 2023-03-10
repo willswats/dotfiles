@@ -6,13 +6,6 @@ set drawbox true
 set scrolloff 8
 
 # Custom Functions
-cmd open ${{
-    case $(file --mime-type "$f" -bL) in
-        text/*|application/json) $EDITOR "$f";;
-        *) xdg-open "$f" ;;
-    esac
-}}
-
 cmd mkdir ${{
   printf "Directory Name: "
   read ans
@@ -22,15 +15,14 @@ cmd mkdir ${{
 cmd mkfile ${{
   printf "File Name: "
   read ans
-  $EDITOR $ans
+  touch $ans
 }}
 
 cmd sudomkfile ${{
   printf "File Name: "
   read ans
-  sudo $EDITOR $ans
+  sudo touch $ans
 }}
-
 
 # Archive bindings
 cmd unarchive ${{
@@ -77,17 +69,7 @@ cmd restore_trash ${{
 # Bindings
 # Remove some defaults
 map m
-map o
-map n
-map "'"
-map '"'
 map d
-map c
-map e
-map f
-
-# File Openers
-map ee $$EDITOR "$f"
 
 # Archive Mappings
 map az zip
@@ -98,31 +80,19 @@ map au unarchive
 
 # Trash Mappings
 map dd trash
-map tc clear_trash
-map tr restore_trash
+map dc clear_trash
+map dr restore_trash
 
 # Basic Functions
-map . set hidden!
-map p paste
 map x cut
 map y copy
-map <enter> open
+map p paste
+map md mkdir
 map mf mkfile
 map mr sudomkfile
-map md mkdir
-map ms $mkscript
-map ch chmod
-map r rename
-map R reload
-map C clear
-map U unselect
-
-map dd trash
-map dr restore_trash
 
 # Movement
 map gd cd ~/Downloads
 map gc cd ~/.config
-map gr cd ~/repos
-map gb cd ~/.local/bin
+map gl cd ~/.local
 map gt cd ~/.local/share/Trash/files
