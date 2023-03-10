@@ -18,12 +18,6 @@ cmd mkfile ${{
   touch $ans
 }}
 
-cmd sudomkfile ${{
-  printf "File Name: "
-  read ans
-  sudo touch $ans
-}}
-
 # Archive bindings
 cmd unarchive ${{
   case "$f" in
@@ -89,7 +83,6 @@ map y copy
 map p paste
 map md mkdir
 map mf mkfile
-map mr sudomkfile
 
 # Movement
 map gd cd ~/Downloads
