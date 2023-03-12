@@ -2,7 +2,7 @@ exec --no-startup-id polybar
 exec --no-startup-id dunst
 exec --no-startup-id redshift
 exec --no-startup-id feh --bg-fill ~/Wallpapers/material-style-5k-hd.jpg --bg-fill ~/Wallpapers/material-style-5k-hd.jpg
-exec --no-startup-id xrandr --output DP-2 --mode 1920x1080 --rate 144.00 --pos 0x0 --rotate right --output DP-3 --mode 1920x1080 --rate 144.00 --pos 1080x0 --rotate normal
+exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 144.00 --pos 0x0 --rotate right --output DP-2 --mode 1920x1080 --rate 144.00 --pos 1080x0 --rotate normal
 exec --no-startup-id xinput --set-prop 9 'libinput Accel Profile Enabled' 0, 1
 exec --no-startup-id rclone mount --vfs-cache-mode writes google-drive: ~/Drive
 exec --no-startup-id mullvad connect
