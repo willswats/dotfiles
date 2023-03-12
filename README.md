@@ -20,13 +20,13 @@ Clone this repository to your home:
 HTTPS:
 
 ```bash
-git clone https://github.com/willswats/dotfiles.git ~/dotfiles
+git clone https://github.com/willswats/dotfiles.git ~/.dotfiles
 ```
 
 SSH:
 
 ```bash
-git clone git@github.com:willswats/dotfiles.git ~/dotfiles
+git clone git@github.com:willswats/dotfiles.git ~/.dotfiles
 ```
 
 Run `stow */` to symlink all directories, or `stow foo` to symlink a specific directory.

@@ -19,9 +19,6 @@ font:
 
   size: 14
 
-key_bindings:
-  - { key: F11, action: ToggleFullscreen }
-
 import:
   # uncomment the flavour you want below:
   - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
