@@ -5,8 +5,6 @@ set -g fish_greeting
 alias flatdel="flatpak uninstall --delete-data"
 alias main="distrobox enter main -- fish"
 alias docker="podman"
-alias nv="nvim"
-alias lg="lazygit"
 
 # set PATH
 set PATH $HOME/.cargo/bin $PATH # Set PATH for cargo
