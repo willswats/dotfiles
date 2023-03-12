@@ -5,35 +5,6 @@ set icons true
 set drawbox true
 set scrolloff 8
 
-# Custom Functions
-cmd mkdir ${{
-  printf "Directory Name: "
-  read ans
-  mkdir $ans
-}}
-
-cmd mkfile ${{
-  printf "File Name: "
-  read ans
-  touch $ans
-}}
-
-# Archive bindings
-cmd unarchive ${{
-  case "$f" in
-      *.zip) unzip "$f" ;;
-      *.tar.gz) tar -xzvf "$f" ;;
-      *.tar.bz2) tar -xjvf "$f" ;;
-      *.tar) tar -xvf "$f" ;;
-      *) echo "Unsupported format" ;;
-  esac
-}}
-
-cmd zip %zip -r "$f" "$f"
-cmd tar %tar cvf "$f.tar" "$f"
-cmd targz %tar cvzf "$f.tar.gz" "$f"
-cmd tarbz2 %tar cjvf "$f.tar.bz2" "$f"
-
 # Trash bindings
 cmd trash ${{
   files=$(printf "$fx" | tr '\n' ';')
@@ -62,15 +33,7 @@ cmd restore_trash ${{
 
 # Bindings
 # Remove some defaults
-map m
 map d
-
-# Archive Mappings
-map az zip
-map at tar
-map ag targz
-map ab targz
-map au unarchive
 
 # Trash Mappings
 map dd trash
@@ -81,8 +44,6 @@ map dr restore_trash
 map x cut
 map y copy
 map p paste
-map md mkdir
-map mf mkfile
 
 # Movement
 map gd cd ~/Downloads
