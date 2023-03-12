@@ -1,7 +1,7 @@
 # Startup
 exec_always polybar
 exec_always xrandr --output DP-0 --mode 1920x1080 --rate 144.00 --pos 0x0 --rotate right --output DP-2 --mode 1920x1080 --rate 144.00 --pos 1080x0 --rotate normal
-exec_always nitrogen --restore &
+exec_always feh --bg-fill ~/Pictures/Wallpapers/material-style-5k-hd.jpg --bg-fill ~/Pictures/Wallpapers/material-style-5k-hd.jpg
 exec_always xinput --set-prop 9 'libinput Accel Profile Enabled' 0, 1
 exec_always rclone mount --vfs-cache-mode writes google-drive: ~/Drive
 exec_always eval "$(ssh-agent -s)"
@@ -42,6 +42,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 bindsym $mod+Return exec alacritty
+bindsym $mod+w exec "flatpak run org.mozilla.firefox"
 bindsym $mod+e exec "alacritty -e lf"
 bindsym $mod+t exec "alacritty -e nvim"
 bindsym $mod+s exec "alacritty -e btm -b"
