@@ -1,10 +1,12 @@
 # Startup
-exec_always polybar
-exec_always xrandr --output DP-0 --mode 1920x1080 --rate 144.00 --pos 0x0 --rotate right --output DP-2 --mode 1920x1080 --rate 144.00 --pos 1080x0 --rotate normal
-exec_always feh --bg-fill ~/Pictures/Wallpapers/material-style-5k-hd.jpg --bg-fill ~/Pictures/Wallpapers/material-style-5k-hd.jpg
-exec_always xinput --set-prop 9 'libinput Accel Profile Enabled' 0, 1
-exec_always rclone mount --vfs-cache-mode writes google-drive: ~/Drive
-exec_always eval "$(ssh-agent -s)"
+exec --no-startup-id polybar
+exec --no-startup-id dunst
+exec --no-startup-id redshift
+exec --no-startup-id mullvad connect
+exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/material-style-5k-hd.jpg --bg-fill ~/Pictures/Wallpapers/material-style-5k-hd.jpg
+exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 144.00 --pos 0x0 --rotate right --output DP-2 --mode 1920x1080 --rate 144.00 --pos 1080x0 --rotate normal
+exec --no-startup-id xinput --set-prop 9 'libinput Accel Profile Enabled' 0, 1
+exec --no-startup-id rclone mount --vfs-cache-mode writes google-drive: ~/Drive
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -18,14 +20,13 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-
-# Appearance
-hide_edge_borders smart 
 new_window 1pixel
+hide_edge_borders smart 
 font pango:Hack Nerd Font 8
 
 # Keymaps
 set $mod Mod4
+set $alt Mod1
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -42,16 +43,18 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 bindsym $mod+Return exec alacritty
-bindsym $mod+w exec "flatpak run org.mozilla.firefox"
-bindsym $mod+e exec "alacritty -e lf"
-bindsym $mod+t exec "alacritty -e nvim"
-bindsym $mod+s exec "alacritty -e btm -b"
-bindsym $mod+m exec "alacritty -e spotify_player"
+bindsym $mod+$alt+w exec flatpak run org.mozilla.firefox
+bindsym $mod+$alt+e exec alacritty -e lf
+bindsym $mod+$alt+t exec alacritty -e nvim
+bindsym $mod+$alt+s exec alacritty -e btm -b
+bindsym $mod+$alt+m exec alacritty -e spotify_player
+bindsym $mod+$alt+l exec i3lock -c 000000
 
 # kill focused window
 bindsym $mod+q kill
 
-bindsym $mod+d exec "rofi -show drun"
+# show rofi
+bindsym $mod+d exec rofi -show drun
 
 # change focus
 bindsym $mod+h focus left
@@ -78,18 +81,18 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-# bindsym $mod+h split h
+bindsym $mod+$alt+h split h
 
 # split in vertical orientation
-# bindsym $mod+v split v
+bindsym $mod+$alt+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stacking
-# bindsym $mod+w layout tabbed
-# bindsym $mod+e layout toggle split
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
