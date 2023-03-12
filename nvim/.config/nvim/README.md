@@ -9,14 +9,21 @@ My Neovim config.
 
 ## Dependencies
 
-`npm` or `pnpm`, `python3`, `pip` and `cargo` need to be installed to install the dependencies.
+`npm`, `python3`, `pip` and `cargo` need to be installed to install the dependencies.
 
 Install dependencies:
 
 ```bash
-pnpm install -g neovim # alternatively, replace this with npm
+npm install -g neovim
 python3 -m pip install --user pynvim
 cargo install fd-find ripgrep
 ```
 
 `trash-cli` is used in `nvim-tree`.
+
+## Formatters & Linters
+
+```bash
+npm i -g prettier
+npm i -g markdownlint-cli
+```

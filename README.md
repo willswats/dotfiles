@@ -33,7 +33,7 @@ Run `stow */` to symlink all directories, or `stow foo` to symlink a specific di
 
 ### Specific Installs
 
-- [Neovim](/nvim/.config/nvim/README.md)
+- [Neovim](./nvim/.config/nvim/README.md)
 
 ## Uninstall
 
