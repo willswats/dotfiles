@@ -1,0 +1,12 @@
+exec --no-startup-id polybar -r 
+exec --no-startup-id dunst
+exec --nostartup-id xsettingsd
+exec --no-startup-id redshift
+exec --no-startup-id nm-applet
+exec --no-startup-id dex-autostart --autostart --environment i3
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000
+exec_always --no-startup-id feh --bg-fill ~/Wallpapers/romb.png --bg-fill ~/Wallpapers/romb.png
+exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 144.00 --pos 0x0 --rotate right --output DP-2 --mode 1920x1080 --rate 144.00 --pos 1080x0 --rotate normal
+exec --no-startup-id xinput --set-prop 9 'libinput Accel Profile Enabled' 0, 1
+exec --no-startup-id rclone mount --vfs-cache-mode writes google-drive: ~/Drive
+exec --no-startup-id mullvad connect

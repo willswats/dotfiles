@@ -1,6 +1,7 @@
 lastupdatecheck: 0
 recentrepos:
 - /var/home/will/.dotfiles
+- /var/home/will/Repos/fedora-silverblue-config
 startuppopupversion: 5
 customcommandshistory: []
 hidecommandlog: false
