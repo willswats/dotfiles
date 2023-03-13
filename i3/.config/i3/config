@@ -1,4 +1,4 @@
-exec --no-startup-id polybar
+exec --no-startup-id polybar -r 
 exec --no-startup-id dunst
 exec --no-startup-id redshift
 exec --no-startup-id feh --bg-fill ~/Wallpapers/material-style-5k-hd.jpg --bg-fill ~/Wallpapers/material-style-5k-hd.jpg
