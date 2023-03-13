@@ -1,5 +1,10 @@
 # TODO
 
+## i3
+
+- [ ] Auto login to ssh
+- [ ] Switch to wireguard-tools
+
 ## Neovim
 
 ### Feature

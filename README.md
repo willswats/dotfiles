@@ -31,10 +31,37 @@ git clone git@github.com:willswats/dotfiles.git ~/.dotfiles
 
 Run `stow */` to symlink all directories, or `stow foo` to symlink a specific directory.
 
-### Specific Installs
-
-- [Neovim](./nvim/.config/nvim/README.md)
-
 ## Uninstall
 
 Run `stow -D */` to remove all symlinks, or `stow -D foo` to remove a symlink for a specific directory.
+
+## Specific Installs
+
+### i3
+
+Get wallpaper:
+
+```bash
+mkdir -p ~/Pictures/Wallpapers
+wget --content-disposition https://raw.githubusercontent.com/catppuccin/wallpapers/main/minimalistic/tetris.png -O ~/Pictures/Wallpapers/tetris.png
+```
+
+### Neovim
+
+- `npm`, `python3`, `pip` and `cargo` need to be installed.
+- `trash-cli` is used in `nvim-tree`.
+
+Install dependencies:
+
+```bash
+npm install -g neovim
+python3 -m pip install --user pynvim
+cargo install fd-find ripgrep
+```
+
+Install formatters and linters:
+
+```bash
+npm i -g prettier
+npm i -g markdownlint-cli
+```

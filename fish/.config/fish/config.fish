@@ -6,7 +6,6 @@ alias flatdel="flatpak uninstall --delete-data"
 alias main="distrobox enter main -- fish"
 alias key="keychain --quiet --agents ssh id_ed25519"
 alias docker="podman"
-
 # set PATH
 set PATH $HOME/.cargo/bin $PATH # Set PATH for cargo
 set PATH $HOME/.local/share/pnpm $PATH # Set PATH for pnpm
@@ -16,4 +15,3 @@ fish_config theme choose "Catppuccin Mocha"
 
 # node version on cd
 fnm env --use-on-cd | source
-
