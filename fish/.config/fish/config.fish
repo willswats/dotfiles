@@ -4,6 +4,7 @@ set -g fish_greeting
 # Set alias
 alias flatdel="flatpak uninstall --delete-data"
 alias main="distrobox enter main -- fish"
+alias key="keychain --quiet --agents ssh id_ed25519"
 alias docker="podman"
 
 # set PATH
