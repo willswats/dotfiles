@@ -11,7 +11,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id dex-autostart --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000
 
-font pango:monospace 8
+include catppuccin-mocha
+font pango:Hack Nerd Font 8
 hide_edge_borders smart
 new_window 1pixel
 
