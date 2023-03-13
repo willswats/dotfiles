@@ -1,12 +1,38 @@
-exec --no-startup-id polybar -r 
-exec --no-startup-id dunst
-exec --no-startup-id xsettingsd
-exec --no-startup-id redshift
-exec --no-startup-id nm-applet
-exec --no-startup-id dex-autostart --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000
-exec --no-startup-id feh --bg-fill ~/Wallpapers/romb.png --bg-fill ~/Wallpapers/romb.png
-exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 144.00 --pos 0x0 --rotate right --output DP-2 --mode 1920x1080 --rate 144.00 --pos 1080x0 --rotate normal
-exec --no-startup-id xinput --set-prop 9 'libinput Accel Profile Enabled' 0, 1
-exec --no-startup-id rclone mount --vfs-cache-mode writes google-drive: ~/Drive
-exec --no-startup-id /opt/Mullvad\ VPN/mullvad-vpn
+# --no-startup-id is used to prevent the loading cursor
+set $exec exec --no-startup-id
+
+# Setup displays
+$exec xrandr --output DP-0 --mode 1920x1080 --rate 144.00 --pos 0x0 --rotate right --output DP-2 --mode 1920x1080 --rate 144.00 --pos 1080x0 --rotate normal
+
+# Set background
+$exec feh --bg-fill ~/Wallpapers/romb.png --bg-fill ~/Wallpapers/romb.png
+
+# Provides settings to GUI apps
+$exec xsettingsd
+
+# i3bar replacement
+$exec polybar -r
+
+# Notifications
+$exec dunst
+
+# Changes screen colour at night
+$exec redshift
+
+# GUI tray icon for nmcli
+$exec nm-applet
+
+# Program to generate and execute DesktopEntry files of type Application
+$exec dex-autostart --autostart --environment i3
+
+# Transfer sleep lock to i3lock
+$exec xss-lock --transfer-sleep-lock -- i3lock -c 000000
+
+# Disable mouse acceleration
+$exec xinput --set-prop 9 'libinput Accel Profile Enabled' 0, 1
+
+# Mount google-drive remote
+$exec rclone mount --vfs-cache-mode writes google-drive: ~/Drive
+
+# Start Mullvad VPN
+$exec /opt/Mullvad\ VPN/mullvad-vpn
