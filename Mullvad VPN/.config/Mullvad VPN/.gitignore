@@ -11,3 +11,5 @@ Code Cache
 Cache
 blob_storage
 Session Storage
+SingletonCookie
+SingletonLock
