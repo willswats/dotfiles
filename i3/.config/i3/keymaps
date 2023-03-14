@@ -27,7 +27,7 @@ bindsym $mod+m exec alacritty -e spotify_player
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # lock i3
-bindsym $mod+- exec i3lock -c 171727
+bindsym $mod+minus exec i3lock -c 171727
 
 # kill focused window
 bindsym $mod+q kill
