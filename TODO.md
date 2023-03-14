@@ -2,6 +2,8 @@
 
 ## i3
 
+- [ ] Auto login ssh
+- [ ] Add polkit GUI
 - [ ] Add brightness keybind
 - [ ] Switch to wireguard-tools
 - [ ] Switch to picom
