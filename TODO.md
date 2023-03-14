@@ -2,6 +2,7 @@
 
 ## i3
 
+- [ ] Add GUI polkit
 - [ ] Auto login to ssh
 - [ ] Switch to wireguard-tools
 
