@@ -26,15 +26,14 @@ end
 mason.setup()
 mason_lspconfig.setup({
   ensure_installed = {
---    "marksman",
---    "html",
---    "cssls",
---    "jsonls",
---    "tsserver",
---    "lua_ls",
---    "rust_analyzer",
+   -- "marksman",
+   -- "html",
+   -- "cssls",
+   -- "jsonls",
+   -- "tsserver",
+   -- "lua_ls",
+   "rust_analyzer",
   },
-  automatic_installation = true,
 })
 
 local lsp_capabilities = cmp_nvim_lsp.default_capabilities()

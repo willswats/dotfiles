@@ -10,6 +10,7 @@
 
 ### Feature
 
+- [ ] Fix mason ensure_installed errors
 - [ ] Move lsp keymaps into on_attach
 - [ ] Setup dap
 - [ ] Lazy load plugins
