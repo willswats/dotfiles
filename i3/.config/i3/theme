@@ -26,8 +26,8 @@ set $crust     #11111b
 
 # target                 title     bg     text   indicator  border
 client.focused           $blue     $base  $text  $blue      $blue
-client.focused_inactive  $base     $base  $text  $blue      $base
-client.unfocused         $base     $base  $text  $blue      $base
+client.focused_inactive  $base     $base  $text  $base      $base
+client.unfocused         $base     $base  $text  $base      $base
 client.urgent            $red      $base  $red   $overlay0  $red
 client.placeholder       $overlay0 $base  $text  $overlay0  $overlay0
 client.background        $base

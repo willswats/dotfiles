@@ -2,6 +2,9 @@
 set $exec exec --no-startup-id
 set $exec_always exec_always --no-startup-id
 
+$exec dbus-update-activation-environment --all
+$exec gnome-keyring-daemon --start --components=secrets,ssh
+
 # Setup displays
 $exec xrandr --output DP-2 --mode 1920x1080 --rate 144.00 --rotate normal --output DP-0 --mode 1920x1080 --rate 144.00 --rotate right --left-of DP-2
 
