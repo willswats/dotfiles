@@ -1,4 +1,5 @@
 set $mod Mod4
+set $alt Mod1
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -16,13 +17,17 @@ tiling_drag modifier titlebar
 
 # start programs
 bindsym $mod+Return exec alacritty
-bindsym $mod+minus exec i3lock -c 000000
-bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+w exec flatpak run org.mozilla.firefox
 bindsym $mod+e exec alacritty -e lf
 bindsym $mod+t exec alacritty -e nvim
 bindsym $mod+s exec alacritty -e btm -b
 bindsym $mod+m exec alacritty -e spotify_player
+
+# rofi
+bindsym $mod+d exec --no-startup-id rofi -show drun
+
+# lock i3
+bindsym $alt+l exec i3lock -c 000000
 
 # kill focused window
 bindsym $mod+q kill
@@ -52,15 +57,15 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in vertical orientation
-bindsym $mod+z split v
+bindsym $alt+v split v
 
 # split in horizontal orientation
-bindsym $mod+x split h
+bindsym $alt+h split h
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+c layout toggle split
-bindsym $mod+v layout tabbed
-bindsym $mod+b layout stacking
+bindsym $alt+s layout tabbed
+bindsym $alt+w layout stacking
+bindsym $alt+e layout toggle split
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
