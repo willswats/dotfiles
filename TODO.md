@@ -3,6 +3,7 @@
 ## i3
 
 - [ ] Switch to wireguard-tools
+- [ ] Add vpn to polybar
 
 ## Neovim
 
