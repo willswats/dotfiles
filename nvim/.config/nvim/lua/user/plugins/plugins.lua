@@ -29,7 +29,6 @@ local plugins = {
   { "nvim-tree/nvim-tree.lua" }, -- Tree
   { "akinsho/bufferline.nvim" }, -- Bufferline
   { "nvim-lualine/lualine.nvim" }, -- Statusline
-  { "goolord/alpha-nvim" }, -- Dashboard
   { "nvim-telescope/telescope.nvim" }, -- Telescope
   { "akinsho/toggleterm.nvim" }, -- Toggleterm
   { "folke/which-key.nvim" }, -- Which key
