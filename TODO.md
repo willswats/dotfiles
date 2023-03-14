@@ -2,18 +2,16 @@
 
 ## i3
 
-- [ ] Add brigtness change keybind
+- [ ] Add brightness keybind
 - [ ] Switch to wireguard-tools
-
-## Polybar
-
-- [ ] Add brightness
-- [ ] Add wireguard-tools to polybar
+- [ ] Switch to picom
+- [ ] Switch to lightdm
 
 ## Neovim
 
 ### Feature
 
+- [ ] nvim-tree restore from trash
 - [ ] Move lsp keymaps into on_attach
 - [ ] Setup dap
 - [ ] Lazy load plugins
