@@ -2,8 +2,6 @@
 
 ## i3
 
-- [ ] Auto login to ssh
-- [ ] Add GUI polkit
 - [ ] Switch to wireguard-tools
 
 ## Neovim
