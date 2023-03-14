@@ -48,13 +48,13 @@ wget --content-disposition https://raw.githubusercontent.com/catppuccin/wallpape
 
 ### Neovim
 
-- `npm`, `python3`, `pip` and `cargo` need to be installed.
+- `pnpm`, `python3`, `pip` and `cargo` need to be installed.
 - `trash-cli` is used in `nvim-tree`.
 
 Install dependencies:
 
 ```bash
-npm install -g neovim
+pnpm install -g neovim
 python3 -m pip install --user pynvim
 cargo install fd-find ripgrep
 ```
@@ -62,6 +62,6 @@ cargo install fd-find ripgrep
 Install formatters and linters:
 
 ```bash
-npm i -g prettier
-npm i -g markdownlint-cli
+pnpm i -g prettier
+pnpm i -g markdownlint-cli
 ```
