@@ -17,7 +17,7 @@ tiling_drag modifier titlebar
 # start programs
 bindsym $mod+Return exec alacritty
 bindsym $mod+minus exec i3lock -c 000000
-bindsym $mod+a exec --no-startup-id rofi -show drun
+bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+w exec flatpak run org.mozilla.firefox
 bindsym $mod+e exec alacritty -e lf
 bindsym $mod+t exec alacritty -e nvim
