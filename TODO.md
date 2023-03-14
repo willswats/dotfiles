@@ -2,8 +2,13 @@
 
 ## i3
 
+- [ ] Add brigtness change keybind
 - [ ] Switch to wireguard-tools
-- [ ] Add vpn to polybar
+
+## Polybar
+
+- [ ] Add brightness
+- [ ] Add wireguard-tools to polybar
 
 ## Neovim
 
