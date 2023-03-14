@@ -1,11 +1,12 @@
 # --no-startup-id is used to prevent a loading cursor while applications are being launched
 set $exec exec --no-startup-id
+set $exec_always exec_always --no-startup-id
 
 # Setup displays
 $exec xrandr --output DP-2 --mode 1920x1080 --rate 144.00 --rotate normal --output DP-0 --mode 1920x1080 --rate 144.00 --rotate right --left-of DP-2
 
 # Set background
-$exec feh --bg-fill ~/Pictures/Wallpapers/tetris.png --bg-fill ~/Pictures/Wallpapers/tetris.png
+$exec feh --no-fehbg --bg-fill ~/Pictures/Wallpapers/tetris.png --bg-fill ~/Pictures/Wallpapers/tetris.png
 
 # Provides settings to GUI apps
 $exec xsettingsd
@@ -21,6 +22,9 @@ $exec redshift
 
 # GUI tray icon for nmcli
 $exec nm-applet
+
+# GUI tray icon for bluetooth
+$exec blueman-applet
 
 # Program to generate and execute DesktopEntry files of type Application
 $exec dex-autostart --autostart --environment i3
