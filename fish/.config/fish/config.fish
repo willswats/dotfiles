@@ -4,6 +4,7 @@ set -g fish_greeting
 # Set alias
 alias flatdel="flatpak uninstall --delete-data"
 alias main="distrobox enter main -- fish"
+alias key="keychain --quiet --agents ssh id_ed25519"
 alias docker="podman"
 
 # set PATH
@@ -17,10 +18,6 @@ fish_config theme choose "Catppuccin Mocha"
 fnm env --use-on-cd | source
 
 # keychain
-if status --is-interactive
-    keychain --quiet --agents ssh id_ed25519
-end
-
 begin
     set -l HOSTNAME (hostname)
     if test -f ~/.keychain/$HOSTNAME-fish
